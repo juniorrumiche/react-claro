@@ -23,7 +23,7 @@ export const HomePage = () => {
         ></Box>
         <Image alt="claro promociones" src="/claro-promociones.png" />
       </Box>
-      <PhoneCardInfo/>
+      <PhoneCardInfo />
       <Footer />
     </main>
   );
