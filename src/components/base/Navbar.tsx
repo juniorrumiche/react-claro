@@ -292,7 +292,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: "Full Claro",
         subLabel: "Todo lo que necesitas esta en Claro.",
-        href: "#",
+        href: "/full-claro",
       },
       {
         label: "Promociones Netflix",

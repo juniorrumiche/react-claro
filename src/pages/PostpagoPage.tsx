@@ -33,7 +33,7 @@ const PhoneCard = () => {
       </Box>
       <HStack mt={3} spacing={1}>
         <Box w="55%" textAlign="center">
-          <Image src="/phone.png"></Image>
+          <Image alt="phone claro" src="/phone.png"></Image>
         </Box>
         <Stack w="40%" spacing={2}>
           <Text fontWeight="bold">Precio Online</Text>

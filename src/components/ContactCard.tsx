@@ -23,7 +23,11 @@ import { ChangeEvent, useState } from "react";
 
 export const ContactCard = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    dni: "",
+    telefono: "",
+    email: "",
+  });
   const toast = useToast();
 
   const handlerForm = (
@@ -32,6 +36,14 @@ export const ContactCard = () => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
+    });
+  };
+
+  const resetForm = () => {
+    setFormData({
+      dni: "",
+      telefono: "",
+      email: "",
     });
   };
 
@@ -44,6 +56,7 @@ export const ContactCard = () => {
       body: JSON.stringify(formData),
     });
     if (response.status == 201) {
+      resetForm();
       toast({
         title: "Exito!",
         status: "success",
@@ -58,7 +71,7 @@ export const ContactCard = () => {
     toast({
       title: "Error!",
       status: "error",
-      description: (await response.json()).message || 'ha ocurrido un error',
+      description: (await response.json()).message || "ha ocurrido un error",
       duration: 4000,
       isClosable: true,
       position: "top",
@@ -82,13 +95,14 @@ export const ContactCard = () => {
           p={8}
         >
           <Stack spacing={4}>
-            <FormControl id="email" isRequired>
+            <FormControl isRequired>
               <FormLabel>DNI</FormLabel>
               <InputGroup>
                 <InputLeftElement>
                   <AiOutlineIdcard />
                 </InputLeftElement>
                 <Input
+                  value={formData.dni}
                   onChange={(e) => handlerForm(e)}
                   type="email"
                   name="dni"
@@ -104,6 +118,7 @@ export const ContactCard = () => {
                 </InputLeftElement>
 
                 <Input
+                  value={formData.email}
                   onChange={(e) => handlerForm(e)}
                   type="email"
                   name="email"
@@ -128,6 +143,7 @@ export const ContactCard = () => {
                   </InputLeftElement>
 
                   <Input
+                    value={formData.telefono}
                     onChange={(e) => handlerForm(e)}
                     type="tel"
                     name="telefono"
