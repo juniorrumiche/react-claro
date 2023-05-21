@@ -34,7 +34,7 @@ const SocialButton = ({
       justifyContent={"center"}
       transition={"background 0.3s ease"}
       _hover={{
-        bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
+        bg: useColorModeValue("teal.400", "whiteAlpha.200"),
       }}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
@@ -59,7 +59,7 @@ export const Footer = () => {
         align={{ base: "center", md: "center" }}
       >
         <Image src="/logo.svg" alt="claro logo " />
-        <Text>© 2022 TiendaMoviVirtual Templates. All rights reserved</Text>
+        <Text>© 2023 Claro . Todos los derechos reservado</Text>
         <Stack direction={"row"} spacing={6}>
           <SocialButton label={"Twitter"} href={"#"}>
             <FaTwitter />

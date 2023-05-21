@@ -87,10 +87,10 @@ export const ContactCard = () => {
     >
       <Stack zIndex={2} py={10} px={5}>
         <Box
-          color={useColorModeValue("gray.600", "gray.300")}
+          color={useColorModeValue("gray.600", "gray.800")}
           w="full"
           rounded={"lg"}
-          bg={useColorModeValue("white", "gray.700")}
+          bg={useColorModeValue("white", "gray.50")}
           boxShadow={"lg"}
           p={8}
         >

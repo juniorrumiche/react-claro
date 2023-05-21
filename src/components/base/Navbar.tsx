@@ -1,5 +1,5 @@
-import {  MdWifi } from "react-icons/md";
-import {Link as LinkRoute} from "react-router-dom"
+import { MdWifi } from "react-icons/md";
+import { Link as LinkRoute } from "react-router-dom";
 import {
   Box,
   Flex,
@@ -34,7 +34,7 @@ export const Navbar = () => {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("white", "gray.700")}
+        bg={useColorModeValue("white", "black")}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
@@ -144,37 +144,36 @@ const DesktopSubNav = ({ icon, label, href, subLabel }: NavItem) => {
       rounded={"md"}
       _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
     >
-    <LinkRoute to={href ?? "/"}>
-    
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <HStack>
-            {icon || ""}
-            <Text
-              transition={"all .3s ease"}
-              _groupHover={{ color: "pink.400" }}
-              fontWeight={500}
-            >
-              {label}
+      <LinkRoute to={href ?? "/"}>
+        <Stack direction={"row"} align={"center"}>
+          <Box>
+            <HStack>
+              {icon || ""}
+              <Text
+                transition={"all .3s ease"}
+                _groupHover={{ color: "pink.400" }}
+                fontWeight={500}
+              >
+                {label}
+              </Text>
+            </HStack>
+            <Text color={"gray.500"} fontSize={"sm"}>
+              {subLabel}
             </Text>
-          </HStack>
-          <Text color={"gray.500"} fontSize={"sm"}>
-            {subLabel}
-          </Text>
-        </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
-        >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </LinkRoute>
+          </Box>
+          <Flex
+            transition={"all .3s ease"}
+            transform={"translateX(-10px)"}
+            opacity={0}
+            _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+            justify={"flex-end"}
+            align={"center"}
+            flex={1}
+          >
+            <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+          </Flex>
+        </Stack>
+      </LinkRoute>
     </Link>
   );
 };
@@ -297,7 +296,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: "Promociones Netflix",
         subLabel: "Netflix, en todas partes contigo",
-        href: "#",
+        href: "/planes/netflix",
       },
 
       {
