@@ -22,7 +22,7 @@ export const HomePage = () => {
           position="absolute"
           css={{ background: "rgba(10,10,10,0.2)" }}
         ></Box>
-        <Image alt="claro promociones" src="/claro-promociones.png" />
+        <Image alt="claro promociones" src="/banner-home.png" />
       </Box>
       <PhoneCardInfo />
       <Box py={10}>

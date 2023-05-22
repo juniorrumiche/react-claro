@@ -17,12 +17,12 @@ const CardService = () => {
         justifyContent="center"
         alignItems="center"
         w="full"
-        py={10}
+        py={14}
         my={5}
         borderRadius="3xl"
         bg={useColorModeValue("white", "whiteAlpha.200")}
       >
-        <Image src="https://claroperupoc.vtexassets.com/arquivos/claro-img-claro-img-accesorios.png"></Image>
+        <Image src="https://claroperupoc.vtexassets.com/arquivos/claro-img-renueva-tu-equipo_actualizado.png" />
       </HStack>
       <Heading textAlign="center" size="md">
         Accesorios

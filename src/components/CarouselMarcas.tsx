@@ -15,7 +15,7 @@ const CarouselMarcaItem = () => {
         bg={useColorModeValue("white", "whiteAlpha.200")}
       >
         <Image src="https://claroperupoc.vtexassets.com/arquivos/banner-marcar-2023-iphone.png" />
-        <Heading size="lg" textAlign="center">
+        <Heading fontWeight="semibold" size="md" textAlign="center">
           IPHONE
         </Heading>
       </Flex>
