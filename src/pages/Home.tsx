@@ -1,13 +1,14 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Center, Heading, Image } from "@chakra-ui/react";
 import { Navbar } from "../components/base/Navbar";
 import { CarouselHome } from "../components/CarouselHome";
 import { Footer } from "../components/base/Footer";
 import { PaymentCardInfo } from "../components/homepage/PaymentCardInfo";
 import { PhoneCardInfo } from "../components/homepage/PhoneCardInfo";
+import { CarouselMarcas } from "../components/CarouselMarcas";
 
 export const HomePage = () => {
   return (
-    <main>
+    <>
       <Navbar />
       <CarouselHome />
       <PaymentCardInfo />
@@ -24,7 +25,15 @@ export const HomePage = () => {
         <Image alt="claro promociones" src="/claro-promociones.png" />
       </Box>
       <PhoneCardInfo />
+      <Box py={10}>
+        <Center>
+          <Heading textAlign="center" size="lg">
+            Las mejores marcas en equipos móviles
+          </Heading>
+        </Center>
+        <CarouselMarcas />
+      </Box>
       <Footer />
-    </main>
+    </>
   );
 };

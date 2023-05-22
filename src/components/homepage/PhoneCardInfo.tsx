@@ -7,6 +7,7 @@ import {
   HStack,
   Heading,
   Image,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 const CardService = () => {
@@ -16,10 +17,10 @@ const CardService = () => {
         justifyContent="center"
         alignItems="center"
         w="full"
-        py={5}
-        my={3}
+        py={10}
+        my={5}
         borderRadius="3xl"
-        background="gray.100"
+        bg={useColorModeValue("white", "whiteAlpha.200")}
       >
         <Image src="https://claroperupoc.vtexassets.com/arquivos/claro-img-claro-img-accesorios.png"></Image>
       </HStack>

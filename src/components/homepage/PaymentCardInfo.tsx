@@ -1,4 +1,12 @@
-import { Container, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import {
+  Container,
+  Flex,
+  Grid,
+  GridItem,
+  Text,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { FaBox, FaMoneyBillWave } from "react-icons/fa";
 import { MdOutlineCreditScore } from "react-icons/md";
@@ -11,9 +19,9 @@ const CardPaymentContainer = ({ children }: CardPaymentProps) => {
     <Flex
       minHeight={190}
       flexDirection="column"
-      bg="whiteAlpha.200"
+      bg={useColorModeValue("white", "whiteAlpha.200")}
       gap={5}
-      boxShadow="2xl"
+      boxShadow="lg"
       alignItems="center"
       px={3}
       py={8}
