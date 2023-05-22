@@ -3,6 +3,7 @@ import { HomePage } from "./pages/Home";
 import { PostpagoPage } from "./pages/PostpagoPage";
 import { FullClaroPage } from "./pages/FullClaroPage";
 import { PlanesNetflixPage } from "./pages/PlanesNetflixPage";
+import { PromocionesClaroPage } from "./pages/PromocionesClaroPage";
 
 export const router = createBrowserRouter([
   {
@@ -20,5 +21,10 @@ export const router = createBrowserRouter([
   {
     path: "/planes/netflix",
     element: <PlanesNetflixPage />,
+  },
+
+  {
+    path: "/promociones",
+    element: <PromocionesClaroPage />,
   },
 ]);

@@ -302,7 +302,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: "Promociones Claro",
         subLabel: "Con nuestras promociones, más por menos",
-        href: "/",
+        href: "/promociones",
       },
     ],
   },
