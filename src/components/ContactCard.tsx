@@ -20,8 +20,9 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { ChangeEvent, useState } from "react";
+import { ContactCardType } from "../types/componente";
 
-export const ContactCard = () => {
+export const ContactCard = ({ select_input_items }: ContactCardType) => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     dni: "",
@@ -103,8 +104,9 @@ export const ContactCard = () => {
                 </InputLeftElement>
                 <Input
                   value={formData.dni}
+                  maxLength={8}
                   onChange={(e) => handlerForm(e)}
-                  type="email"
+                  type="tel"
                   name="dni"
                 />
               </InputGroup>
@@ -129,9 +131,12 @@ export const ContactCard = () => {
               <FormControl isRequired>
                 <FormLabel>Plan</FormLabel>
                 <Select onChange={(e) => handlerForm(e)} name="opcion">
-                  <option value="0">item 1</option>
-                  <option value="1">item 2</option>
-                  <option value="3">item 3</option>
+                  <option value="">Seleccione</option>
+                  {select_input_items.map((item, index) => (
+                    <option key={index} value={`${item.value}`}>
+                      {item.text}
+                    </option>
+                  ))}
                 </Select>
               </FormControl>
 
@@ -145,6 +150,7 @@ export const ContactCard = () => {
                   <Input
                     value={formData.telefono}
                     onChange={(e) => handlerForm(e)}
+                    maxLength={9}
                     type="tel"
                     name="telefono"
                   />

@@ -59,7 +59,9 @@ export const Navbar = () => {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Image alt="tienda claro" src="/logo.svg"></Image>
+          <LinkRoute to="/">
+            <Image alt="tienda claro" src="/logo.svg"></Image>
+          </LinkRoute>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />

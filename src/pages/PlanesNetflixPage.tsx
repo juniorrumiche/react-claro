@@ -9,13 +9,14 @@ import {
 import { ContactCard } from "../components/ContactCard";
 import { Navbar } from "../components/base/Navbar";
 import { CardPlanNetflix } from "../components/planesnetflix/CardPlanNetflix";
-import { PlanesNetflixDB } from "../db/db";
+import { Planes1PlayDB, PlanesNetflixDB } from "../db/db";
+import { Footer } from "../components/base/Footer";
 
 export const PlanesNetflixPage = () => {
   return (
     <>
       <Navbar />
-      <ContactCard />
+      <ContactCard select_input_items={Planes1PlayDB} />
       <Container maxWidth="5xl" py={10} px={5}>
         <Flex justifyContent="center">
           <VStack textAlign="center">
@@ -35,6 +36,7 @@ export const PlanesNetflixPage = () => {
           ))}
         </SimpleGrid>
       </Container>
+      <Footer />
     </>
   );
 };

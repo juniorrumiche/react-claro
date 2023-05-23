@@ -11,7 +11,7 @@ import {
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 export const LoginPage = () => {
-  const { colorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   const formBackground = useColorModeValue("whiteAlpha.400", "whiteAlpha.100");
 
   return (
@@ -51,6 +51,7 @@ export const LoginPage = () => {
         <FormControl display="flex" alignItems="center">
           <IconButton
             position="fixed"
+            onClick={toggleColorMode}
             top={5}
             right={5}
             icon={colorMode === "dark" ? <MdLightMode /> : <MdDarkMode />}

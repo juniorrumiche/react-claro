@@ -1,3 +1,39 @@
+export const Planes1PlayDB: Array<Planes1PlayDBType> = [
+  {
+    text: "Plan Claro 75.50",
+    value: "Plan Claro 75.50",
+  },
+
+  {
+    text: "Plan Claro 82.50",
+    value: "Plan Claro 82.50",
+  },
+
+  {
+    text: "Plan Claro 90",
+    value: "Plan Claro 90",
+  },
+  {
+    text: "Plan Claro 95.00",
+    value: "Plan Claro 95.00",
+  },
+
+  {
+    text: "Plan Claro 140.00",
+    value: "Plan Claro 140.00",
+  },
+
+  {
+    text: "Plan Claro 160.00",
+    value: "Plan Claro 160.00",
+  },
+
+  {
+    text: "Plan Claro 260.00",
+    value: "Plan Claro 260.00",
+  },
+];
+
 export const PlanesNetflixDB: Array<PlanesNetflixDBType> = [
   {
     mb_standar: 55,

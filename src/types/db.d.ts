@@ -1,3 +1,8 @@
+interface SelectInputType {
+  value: string;
+  text: string;
+}
+
 interface PlanesNetflixDBType {
   mb_standar: number;
   nombre_plan: string;
@@ -7,3 +12,5 @@ interface PlanesNetflixDBType {
   cargo: number;
   precio_total: number;
 }
+
+interface Planes1PlayDBType extends SelectInputType {}
