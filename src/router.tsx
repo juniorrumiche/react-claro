@@ -6,6 +6,7 @@ import { PromocionesClaroPage } from "./pages/PromocionesClaroPage";
 import { LoginPage } from "./pages/LoginPage";
 import { HomePage } from "./pages/HomePage";
 import { NotFoundPage } from "./pages/404";
+import { DashboardPage } from "./pages/admin/DashboardPage";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/admin",
+    element: <DashboardPage />,
   },
   {
     path: "*",

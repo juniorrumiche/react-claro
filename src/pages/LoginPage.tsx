@@ -32,7 +32,7 @@ export const LoginPage = () => {
       });
 
       if (response.status == 200) {
-        Cookie.set("_session", response.data.token, { expires: 1 });
+        Cookie.set("_session", response.data.token, { expires: 1 / 24 });
         navigate("/admin");
       }
     } catch (error) {
