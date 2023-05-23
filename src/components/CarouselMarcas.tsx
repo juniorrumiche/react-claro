@@ -1,7 +1,8 @@
 import { Box, Flex, Heading, Image, useColorModeValue } from "@chakra-ui/react";
 import Slider from "react-slick";
+import { CarouselMarcaItemTypes } from "../types/componente";
 
-const CarouselMarcaItem = () => {
+const CarouselMarcaItem = (props: CarouselMarcaItemTypes) => {
   return (
     <Box>
       <Flex
@@ -14,9 +15,16 @@ const CarouselMarcaItem = () => {
         borderRadius="2xl"
         bg={useColorModeValue("white", "whiteAlpha.200")}
       >
-        <Image src="https://claroperupoc.vtexassets.com/arquivos/banner-marcar-2023-iphone.png" />
+        <Image
+          loading="lazy"
+          src={
+            props.url
+              ? `${props.url}`
+              : "https://claroperupoc.vtexassets.com/arquivos/banner-marcar-2023-zte.png"
+          }
+        />
         <Heading fontWeight="semibold" size="md" textAlign="center">
-          IPHONE
+          {props.title}
         </Heading>
       </Flex>
     </Box>
@@ -41,12 +49,11 @@ export const CarouselMarcas = () => {
 
   return (
     <Slider dots={true} arrows={false} {...settings}>
-      <CarouselMarcaItem />
-      <CarouselMarcaItem />
-      <CarouselMarcaItem />
-      <CarouselMarcaItem />
-      <CarouselMarcaItem />
-      <CarouselMarcaItem />
+      <CarouselMarcaItem title="SAMSUMG" />
+      <CarouselMarcaItem title="IPHONE" />
+      <CarouselMarcaItem title="OPO" />
+      <CarouselMarcaItem title="XIAOMI" />
+      <CarouselMarcaItem title="HUWAEI" />
       <CarouselMarcaItem />
     </Slider>
   );

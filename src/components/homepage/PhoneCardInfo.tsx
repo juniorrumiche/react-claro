@@ -7,10 +7,12 @@ import {
   HStack,
   Heading,
   Image,
+  SimpleGrid,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { CardServiceType } from "../../types/componente";
 
-const CardService = () => {
+const CardService = (props: CardServiceType) => {
   return (
     <Flex my={5} w="full" flexDir="column">
       <HStack
@@ -24,8 +26,8 @@ const CardService = () => {
       >
         <Image src="https://claroperupoc.vtexassets.com/arquivos/claro-img-renueva-tu-equipo_actualizado.png" />
       </HStack>
-      <Heading textAlign="center" size="md">
-        Accesorios
+      <Heading textAlign="center" fontWeight="semibold" size="md">
+        {props.title}
       </Heading>
     </Flex>
   );
@@ -42,30 +44,13 @@ export const PhoneCardInfo = () => {
         <Center>
           <Heading size="lg">Tenemos el plan perfecto para ti</Heading>
         </Center>
-        <Grid
-          templateColumns={{ base: "repeat(1,1fr)", md: "repeat(5,1fr)" }}
-          gap={5}
-        >
-          <GridItem w="full">
-            <CardService />
-          </GridItem>
-
-          <GridItem w="full">
-            <CardService />
-          </GridItem>
-
-          <GridItem w="full">
-            <CardService />
-          </GridItem>
-
-          <GridItem w="full">
-            <CardService />
-          </GridItem>
-
-          <GridItem w="full">
-            <CardService />
-          </GridItem>
-        </Grid>
+        <SimpleGrid columns={{ base: 1, md: 5 }} gap={10}>
+          <CardService title="Hogar 1 play" />
+          <CardService title="Hogar 2 play" />
+          <CardService title="Hogar 3 play" />
+          <CardService title="Planes Netflix" />
+          <CardService title="Planes Moviles" />
+        </SimpleGrid>
       </Container>
     </>
   );

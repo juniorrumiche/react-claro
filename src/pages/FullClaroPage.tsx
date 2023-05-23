@@ -54,7 +54,7 @@ export const FullClaroPage = () => {
     <>
       <Navbar />
       <BannerFullClaro />
-      <Box py={10} px={5} bg={useColorModeValue("whiteAlpha.100", "black")}>
+      <Box py={10} px={5} >
         <Container py={10} maxWidth="3xl" bg="whiteAlpha.200">
           <CardListPhoneFullClaro />
           <VStack mt={5} spacing={0}>
@@ -71,15 +71,19 @@ export const FullClaroPage = () => {
         </Container>
       </Box>
 
-      <Box bg={useColorModeValue("whiteAlpha.100", "black")}>
+      <Box >
         <Container maxWidth="4xl">
-          <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 10, md: 20 }}>
+          <SimpleGrid
+          mb={10}
+            columns={{ base: 1, md: 2 }}
+            gap={{ base: 10, md: 20 }}
+          >
             <VStack
-              bg="whiteAlpha.100"
+              bg={useColorModeValue("white", "whiteAlpha.200")}
               textAlign="center"
               px={12}
               py={10}
-              shadow="lg"
+              borderRadius="2xl"
             >
               <Heading color="#DC3545" fontWeight="semibold" fontSize="3xl">
                 Full claro esta en todas partes
@@ -90,7 +94,12 @@ export const FullClaroPage = () => {
               </Text>
             </VStack>
 
-            <HStack px={5} py={10} bg="whiteAlpha.100">
+            <HStack
+              borderRadius="2xl"
+              px={5}
+              py={10}
+              bg={useColorModeValue("white", "whiteAlpha.200")}
+            >
               <Box w="80%">
                 <Text>
                   Busca en cada promocion el apartado de ful claro, y descubre
