@@ -11,9 +11,12 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useState } from "react";
+import Cookie from "js-cookie";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
   const { colorMode, toggleColorMode } = useColorMode();
   const [isloading, setIsLoading] = useState(false);
   const formBackground = useColorModeValue("whiteAlpha.400", "whiteAlpha.100");
@@ -28,7 +31,10 @@ export const LoginPage = () => {
         password,
       });
 
-      console.log(response.data);
+      if (response.status == 200) {
+        Cookie.set("_session", response.data.token, { expires: 1 });
+        navigate("/admin");
+      }
     } catch (error) {
       if (axios.isAxiosError(error)) {
         toast({
@@ -39,7 +45,6 @@ export const LoginPage = () => {
           isClosable: true,
           duration: 5000,
         });
-        console.log(error.response?.data);
       }
     }
   };
