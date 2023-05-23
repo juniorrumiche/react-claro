@@ -4,17 +4,13 @@ import {
   Grid,
   GridItem,
   Text,
-  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
 import { FaBox, FaMoneyBillWave } from "react-icons/fa";
 import { MdOutlineCreditScore } from "react-icons/md";
+import { MetodoPagoItemType } from "../../types/componente";
 
-interface CardPaymentProps {
-  children?: ReactNode;
-}
-const CardPaymentContainer = ({ children }: CardPaymentProps) => {
+const MetodoPagoItem = ({ children }: MetodoPagoItemType) => {
   return (
     <Flex
       minHeight={190}
@@ -32,7 +28,7 @@ const CardPaymentContainer = ({ children }: CardPaymentProps) => {
   );
 };
 
-export const PaymentCardInfo = () => {
+export const MetodoPago = () => {
   return (
     <>
       <Container
@@ -45,28 +41,28 @@ export const PaymentCardInfo = () => {
           gap={5}
         >
           <GridItem w="full">
-            <CardPaymentContainer>
+            <MetodoPagoItem>
               <MdOutlineCreditScore color="gray" size={50} />
               <Text width="70%">
                 Paga con la comodidad y en cuotas de tu marca preferida.
               </Text>
-            </CardPaymentContainer>
+            </MetodoPagoItem>
           </GridItem>
           <GridItem w="full">
-            <CardPaymentContainer>
+            <MetodoPagoItem>
               <FaMoneyBillWave size={40} color="gray" />
               <Text width="70%">
                 Paga a través de tu banca personal con Pago Efectivo.
               </Text>
-            </CardPaymentContainer>
+            </MetodoPagoItem>
           </GridItem>
           <GridItem w="full">
-            <CardPaymentContainer>
+            <MetodoPagoItem>
               <FaBox size={40} color="gray" />
               <Text width="70%">
                 Si lo prefieres paga al recibir tu producto.
               </Text>
-            </CardPaymentContainer>
+            </MetodoPagoItem>
           </GridItem>
         </Grid>
       </Container>

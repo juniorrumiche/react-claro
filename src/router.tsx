@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import { HomePage } from "./pages/Home";
 import { PostpagoPage } from "./pages/PostpagoPage";
 import { FullClaroPage } from "./pages/FullClaroPage";
 import { PlanesNetflixPage } from "./pages/PlanesNetflixPage";
 import { PromocionesClaroPage } from "./pages/PromocionesClaroPage";
 import { LoginPage } from "./pages/LoginPage";
+import { HomePage } from "./pages/HomePage";
 
 export const router = createBrowserRouter([
   {

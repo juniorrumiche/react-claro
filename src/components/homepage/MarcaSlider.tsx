@@ -1,8 +1,8 @@
 import { Box, Flex, Heading, Image, useColorModeValue } from "@chakra-ui/react";
 import Slider from "react-slick";
-import { CarouselMarcaItemTypes } from "../types/componente";
+import { MarcaSliderItemType } from "../../types/componente";
 
-const CarouselMarcaItem = (props: CarouselMarcaItemTypes) => {
+const MarcaSliderItem = (props: MarcaSliderItemType) => {
   return (
     <Box>
       <Flex
@@ -31,7 +31,7 @@ const CarouselMarcaItem = (props: CarouselMarcaItemTypes) => {
   );
 };
 
-export const CarouselMarcas = () => {
+export const MarcaSlider = () => {
   const settings = {
     swipe: true,
     slidesToShow: 4,
@@ -49,12 +49,11 @@ export const CarouselMarcas = () => {
 
   return (
     <Slider dots={true} arrows={false} {...settings}>
-      <CarouselMarcaItem title="SAMSUMG" />
-      <CarouselMarcaItem title="IPHONE" />
-      <CarouselMarcaItem title="OPO" />
-      <CarouselMarcaItem title="XIAOMI" />
-      <CarouselMarcaItem title="HUWAEI" />
-      <CarouselMarcaItem />
+      <MarcaSliderItem title="SAMSUMG" />
+      <MarcaSliderItem title="IPHONE" />
+      <MarcaSliderItem title="OPO" />
+      <MarcaSliderItem title="XIAOMI" />
+      <MarcaSliderItem title="HUWAEI" />
     </Slider>
   );
 };

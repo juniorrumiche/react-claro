@@ -10,15 +10,23 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
+import { CardPlanNetFlixType } from "../../types/componente";
+import { MdSpeed } from "react-icons/md";
 
-export const CardPlanNetflix = () => {
+export const CardPlanNetflix = ({
+  mb_standar,
+  precio_total,
+  modalidad,
+  numero_pantallas,
+  mb_fullclaro,
+}: CardPlanNetFlixType) => {
   return (
     <Center py={6}>
       <Box
         maxW={"330px"}
         w={"full"}
         bg={useColorModeValue("white", "gray.800")}
-        boxShadow={"2xl"}
+        boxShadow={"lg"}
         rounded={"md"}
         overflow={"hidden"}
       >
@@ -28,23 +36,16 @@ export const CardPlanNetflix = () => {
           color={useColorModeValue("gray.800", "white")}
           align={"center"}
         >
-          <Text
-            fontSize={"sm"}
-            fontWeight={500}
-            bg={useColorModeValue("green.50", "green.900")}
-            p={2}
-            px={3}
-            color={"green.500"}
-            rounded={"full"}
-          >
-            Hobby
+          <Text fontSize={"lg"} color="gray.500" fontWeight={500} p={2} px={3}>
+            <MdSpeed size={75} />
+            {mb_standar} Mbps
           </Text>
           <Stack direction={"row"} align={"center"} justify={"center"}>
-            <Text fontSize={"3xl"}>$</Text>
-            <Text fontSize={"6xl"} fontWeight={800}>
-              79
+            <Text fontSize={"3xl"}>S./</Text>
+            <Text fontSize={"5xl"} fontWeight={800}>
+              {precio_total.toFixed(2)}
             </Text>
-            <Text color={"gray.500"}>/month</Text>
+            <Text color={"gray.500"}>/mes</Text>
           </Stack>
         </Stack>
 
@@ -52,19 +53,19 @@ export const CardPlanNetflix = () => {
           <List spacing={3}>
             <ListItem>
               <ListIcon as={CheckIcon} color="green.400" />
-              5.000 page views
+              {modalidad}
             </ListItem>
             <ListItem>
               <ListIcon as={CheckIcon} color="green.400" />
-              50 automation executions
+              {numero_pantallas} Pantallas
             </ListItem>
             <ListItem>
               <ListIcon as={CheckIcon} color="green.400" />
-              50 identified users
+              <b>{mb_fullclaro}Mbps</b> Full Claro
             </ListItem>
             <ListItem>
               <ListIcon as={CheckIcon} color="green.400" />
-              All features
+              Mira series sin publicidad
             </ListItem>
           </List>
 

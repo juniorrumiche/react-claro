@@ -8,13 +8,20 @@ import {
   SimpleGrid,
   Text,
   VStack,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { Navbar } from "../components/base/Navbar";
 import { Footer } from "../components/base/Footer";
 
 const CardPromociones = () => {
   return (
-    <Box color="white.200" boxShadow="lg" py={10} px={10} borderRadius="lg">
+    <Box
+      color="white.200"
+      bg={useColorModeValue("white", "whiteAlpha.200")}
+      py={10}
+      px={10}
+      borderRadius="lg"
+    >
       <HStack spacing={2}>
         <VStack alignItems="start">
           <Heading fontWeight="semibold" size="md" textAlign="start">

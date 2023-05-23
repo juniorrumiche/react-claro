@@ -9,6 +9,7 @@ import {
 import { ContactCard } from "../components/ContactCard";
 import { Navbar } from "../components/base/Navbar";
 import { CardPlanNetflix } from "../components/planesnetflix/CardPlanNetflix";
+import { PlanesNetflixDB } from "../db/db";
 
 export const PlanesNetflixPage = () => {
   return (
@@ -29,9 +30,9 @@ export const PlanesNetflixPage = () => {
           </VStack>
         </Flex>
         <SimpleGrid py={10} columns={{ base: 1, md: 3 }} gap={5}>
-          <CardPlanNetflix />
-          <CardPlanNetflix />
-          <CardPlanNetflix />
+          {PlanesNetflixDB.map((plan, index) => (
+            <CardPlanNetflix key={index} {...plan} />
+          ))}
         </SimpleGrid>
       </Container>
     </>

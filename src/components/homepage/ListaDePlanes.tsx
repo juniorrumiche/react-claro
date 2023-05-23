@@ -2,17 +2,15 @@ import {
   Center,
   Container,
   Flex,
-  Grid,
-  GridItem,
   HStack,
   Heading,
   Image,
   SimpleGrid,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { CardServiceType } from "../../types/componente";
+import { ListDePlanesItemType } from "../../types/componente";
 
-const CardService = (props: CardServiceType) => {
+const ListaPlanItem = (props: ListDePlanesItemType) => {
   return (
     <Flex my={5} w="full" flexDir="column">
       <HStack
@@ -33,7 +31,7 @@ const CardService = (props: CardServiceType) => {
   );
 };
 
-export const PhoneCardInfo = () => {
+export const ListaDePlanes = () => {
   return (
     <>
       <Container
@@ -45,11 +43,11 @@ export const PhoneCardInfo = () => {
           <Heading size="lg">Tenemos el plan perfecto para ti</Heading>
         </Center>
         <SimpleGrid columns={{ base: 1, md: 5 }} gap={10}>
-          <CardService title="Hogar 1 play" />
-          <CardService title="Hogar 2 play" />
-          <CardService title="Hogar 3 play" />
-          <CardService title="Planes Netflix" />
-          <CardService title="Planes Moviles" />
+          <ListaPlanItem title="Hogar 1 play" />
+          <ListaPlanItem title="Hogar 2 play" />
+          <ListaPlanItem title="Hogar 3 play" />
+          <ListaPlanItem title="Planes Netflix" />
+          <ListaPlanItem title="Planes Moviles" />
         </SimpleGrid>
       </Container>
     </>

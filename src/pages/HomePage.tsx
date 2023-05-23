@@ -1,17 +1,17 @@
 import { Box, Center, Heading, Image } from "@chakra-ui/react";
 import { Navbar } from "../components/base/Navbar";
-import { CarouselHome } from "../components/CarouselHome";
 import { Footer } from "../components/base/Footer";
-import { PaymentCardInfo } from "../components/homepage/PaymentCardInfo";
-import { PhoneCardInfo } from "../components/homepage/PhoneCardInfo";
-import { CarouselMarcas } from "../components/CarouselMarcas";
+import { CarouselHome } from "../components/homepage/CarouselHome";
+import { MarcaSlider } from "../components/homepage/MarcaSlider";
+import { MetodoPago } from "../components/homepage/MetodoPago";
+import { ListaDePlanes } from "../components/homepage/ListaDePlanes";
 
 export const HomePage = () => {
   return (
     <>
       <Navbar />
       <CarouselHome />
-      <PaymentCardInfo />
+      <MetodoPago />
       <Box mt={10} position="relative">
         <Box
           w="full"
@@ -24,14 +24,14 @@ export const HomePage = () => {
         ></Box>
         <Image alt="claro promociones" src="/banner-home.png" />
       </Box>
-      <PhoneCardInfo />
+      <ListaDePlanes />
       <Box py={10}>
         <Center>
           <Heading textAlign="center" size="lg">
             Las mejores marcas en equipos móviles
           </Heading>
         </Center>
-        <CarouselMarcas />
+        <MarcaSlider />
       </Box>
       <Footer />
     </>

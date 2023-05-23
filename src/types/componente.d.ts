@@ -1,9 +1,16 @@
-export interface CarouselMarcaItemTypes {
+interface MetodoPagoItemType {
+  children?: ReactNode;
+}
+export interface MarcaSliderItemType {
   title?: string;
   url?: string;
 }
 
-export interface CardServiceType {
+export interface ListDePlanesItemType {
   title?: string;
   image?: string;
+}
+
+export interface CardPlanNetFlixType extends PlanesNetflixDBType{
+  
 }
