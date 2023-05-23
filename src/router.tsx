@@ -5,6 +5,7 @@ import { PlanesNetflixPage } from "./pages/PlanesNetflixPage";
 import { PromocionesClaroPage } from "./pages/PromocionesClaroPage";
 import { LoginPage } from "./pages/LoginPage";
 import { HomePage } from "./pages/HomePage";
+import { NotFoundPage } from "./pages/404";
 
 export const router = createBrowserRouter([
   {
@@ -31,5 +32,9 @@ export const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);

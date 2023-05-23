@@ -7,13 +7,45 @@ import {
   Input,
   useColorMode,
   useColorModeValue,
+  useToast,
 } from "@chakra-ui/react";
+import axios from "axios";
+import { useState } from "react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 export const LoginPage = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const [isloading, setIsLoading] = useState(false);
   const formBackground = useColorModeValue("whiteAlpha.400", "whiteAlpha.100");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const toast = useToast();
 
+  const loginUser = async () => {
+    try {
+      let response = await axios.post("/api/auth", {
+        email,
+        password,
+      });
+
+      console.log(response.data);
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        toast({
+          position: "top",
+          status: "error",
+          title: "Error",
+          description: error.response?.data.message || "ha ocurriod un error",
+          isClosable: true,
+          duration: 5000,
+        });
+        console.log(error.response?.data);
+      }
+    }
+  };
+
+  const sleep = (ms: number) =>
+    new Promise((resolve) => setTimeout(resolve, ms));
   return (
     <Flex
       h="100vh"
@@ -32,20 +64,33 @@ export const LoginPage = () => {
       >
         <Heading mb={6}>Log In</Heading>
         <Input
-          name="username"
-          placeholder="username"
+          onChange={(e) => setEmail(e.target.value)}
+          name="email"
+          placeholder="email"
           type="email"
           variant="filled"
           mb={3}
         />
         <Input
+          onChange={(e) => setPassword(e.target.value)}
           name="password"
           placeholder="**********"
           type="password"
           variant="filled"
           mb={6}
         />
-        <Button loadingText={"Autorizando"} colorScheme="teal" mb={8}>
+        <Button
+          onClick={async () => {
+            setIsLoading(true);
+            await sleep(2000);
+            await loginUser();
+            setIsLoading(false);
+          }}
+          isLoading={isloading}
+          loadingText={"Verificando "}
+          colorScheme="teal"
+          mb={8}
+        >
           Log In
         </Button>
         <FormControl display="flex" alignItems="center">

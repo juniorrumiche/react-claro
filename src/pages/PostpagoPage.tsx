@@ -29,7 +29,9 @@ const PhoneCard = () => {
         <Heading color="gray" size="md">
           Motorola
         </Heading>
-        <Heading mt={2} size="lg">Moto G23 128GB Gris Oxford</Heading>
+        <Heading mt={2} size="lg">
+          Moto G23 128GB Gris Oxford
+        </Heading>
       </Box>
       <HStack mt={3} spacing={1}>
         <Box w="55%" textAlign="center">
@@ -42,14 +44,19 @@ const PhoneCard = () => {
             Postpago Portabilidad Max ilimitado 69.90
           </Text>
           <Text fontSize={12}>
-            <Badge bg="red.200" borderRadius='lg' mr={1}>
+            <Badge bg="red.200" borderRadius="lg" mr={1}>
               20% dto
             </Badge>
             x 3 meses. <b>55.92</b>
           </Text>
         </Stack>
       </HStack>
-      <Button colorScheme="red" mt={3} variant="outline" leftIcon={<AiOutlineFundView />}>
+      <Button
+        colorScheme="red"
+        mt={3}
+        variant="outline"
+        leftIcon={<AiOutlineFundView />}
+      >
         Ver Detalles
       </Button>
     </Flex>
@@ -60,7 +67,7 @@ export const PostpagoPage = () => {
   return (
     <main>
       <Navbar />
-      <ContactCard />
+      <ContactCard select_input_items={[]} />
       <Grid
         py={10}
         px={5}
