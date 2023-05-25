@@ -49,7 +49,7 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
   };
 
   const submitForm = async () => {
-    let response = await fetch("/api/clientes/add", {
+    let response = await fetch("/api/v1/clientes/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

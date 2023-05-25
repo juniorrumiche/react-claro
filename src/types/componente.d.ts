@@ -1,3 +1,5 @@
+import { PlanesNetflixDBType } from "./db";
+
 interface MetodoPagoItemType {
   children?: ReactNode;
 }

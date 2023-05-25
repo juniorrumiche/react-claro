@@ -26,12 +26,13 @@ export const LoginPage = () => {
 
   const loginUser = async () => {
     try {
-      let response = await axios.post("/api/auth", {
+      let response = await axios.post("/api/v1/auth", {
         email,
         password,
       });
+      const token = response.data.token;
 
-      if (response.status == 200) {
+      if (response.status == 200 && token) {
         Cookie.set("_session", response.data.token, { expires: 1 / 24 });
         navigate("/admin");
       }
@@ -41,7 +42,7 @@ export const LoginPage = () => {
           position: "top",
           status: "error",
           title: "Error",
-          description: error.response?.data.message || "ha ocurriod un error",
+          description: error.response?.data.message || "ha ocurrido un error",
           isClosable: true,
           duration: 5000,
         });

@@ -7,6 +7,8 @@ import { LoginPage } from "./pages/LoginPage";
 import { HomePage } from "./pages/HomePage";
 import { NotFoundPage } from "./pages/404";
 import { DashboardPage } from "./pages/admin/DashboardPage";
+import { DatosWeb } from "./pages/admin/DatosWeb";
+import { DatosLandingPage } from "./pages/admin/DatosLanding";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +39,16 @@ export const router = createBrowserRouter([
   {
     path: "/admin",
     element: <DashboardPage />,
+  },
+
+  {
+    path: "/admin/data/web",
+    element: <DatosWeb />,
+  },
+
+  {
+    path: "/admin/data/landing",
+    element: <DatosLandingPage />,
   },
   {
     path: "*",

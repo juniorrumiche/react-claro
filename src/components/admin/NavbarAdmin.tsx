@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Link as LinkRoute } from "react-router-dom";
 import {
   Box,
   Flex,
@@ -16,21 +17,30 @@ import {
   useColorModeValue,
   Stack,
   Heading,
+  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import Cookies from "js-cookie";
+import { MdLogout } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
-const Links = ["Datos Landing", "Datos Web", "Usuarios"];
+const Links = [
+  { name: "Datos Landing", path: "/admin/data/landing" },
+  { name: "Datos Web", path: "/admin/data/web" },
+  { name: "Usuarios", path: "/admin" },
+  { name: "Planes", path: "/admin" },
+  { name: "Equipos", path: "/admin" },
+];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
     px={2}
     py={1}
-    rounded={"md"}
+    transition="all .7s ease"
     _hover={{
       textDecoration: "none",
-      bg: useColorModeValue("gray.50", "gray.700"),
+      borderBottom: "2px solid gray",
     }}
-    href={"#"}
   >
     {children}
   </Link>
@@ -38,6 +48,12 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 
 export const NavbarAdmin = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
+
+  const logoutUser = () => {
+    Cookies.remove("_session");
+    navigate("/login");
+  };
 
   return (
     <>
@@ -59,8 +75,10 @@ export const NavbarAdmin = () => {
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link, index) => (
+                <NavLink key={index}>
+                  <LinkRoute to={link.path}>{link.name}</LinkRoute>
+                </NavLink>
               ))}
             </HStack>
           </HStack>
@@ -75,11 +93,14 @@ export const NavbarAdmin = () => {
               >
                 <Avatar size={"sm"} src={"https://picsum.photos/200"} />
               </MenuButton>
-              <MenuList>
+              <MenuList zIndex={10}>
                 <MenuItem>Link 1</MenuItem>
                 <MenuItem>Link 2</MenuItem>
                 <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
+                <MenuItem onClick={logoutUser}>
+                  <MdLogout />
+                  <Text ml={2}>Cerrar Session</Text>
+                </MenuItem>
               </MenuList>
             </Menu>
           </Flex>
@@ -89,7 +110,7 @@ export const NavbarAdmin = () => {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <LinkRoute to={link.path}>{link.name}</LinkRoute>
               ))}
             </Stack>
           </Box>
