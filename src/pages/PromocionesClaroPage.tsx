@@ -17,7 +17,7 @@ const CardPromociones = () => {
   return (
     <Box
       color="white.200"
-      bg={useColorModeValue("white", "whiteAlpha.200")}
+      bg={useColorModeValue("white", "whiteAlpha.100")}
       py={10}
       px={10}
       borderRadius="lg"

@@ -7,7 +7,10 @@ import {
   HOME_PATH,
   LANDING_DATA_PATH,
   LOGIN_PATH,
+  MOVILES_LISTA_PATH,
   PLANES_NETFLIX_PATH,
+  POSTPAGO_CLARO_PATH,
+  PROMOCIONES_PATH,
   WEB_DATA_PATH,
 } from "./config/config";
 import { PublicRoutes } from "./components/PublicRoutes";
@@ -18,6 +21,8 @@ import { HomePage } from "./pages/HomePage";
 import { NotFoundPage } from "./pages/404";
 import { FullClaroPage } from "./pages/FullClaroPage";
 import { PlanesNetflixPage } from "./pages/PlanesNetflixPage";
+import { PostpagoPage } from "./pages/PostpagoPage";
+import { PromocionesClaroPage } from "./pages/PromocionesClaroPage";
 
 function App() {
   return (
@@ -29,6 +34,15 @@ function App() {
               <Route path={HOME_PATH} element={<HomePage />} />
               <Route path={LOGIN_PATH} element={<LoginPage />} />
               <Route path={FULL_CLARO_PATH} element={<FullClaroPage />} />
+              <Route path={POSTPAGO_CLARO_PATH} element={<PostpagoPage />} />
+              <Route
+                path={MOVILES_LISTA_PATH + "/:marca"}
+                element={<PostpagoPage />}
+              />
+              <Route
+                path={PROMOCIONES_PATH}
+                element={<PromocionesClaroPage />}
+              />
               <Route
                 path={PLANES_NETFLIX_PATH}
                 element={<PlanesNetflixPage />}

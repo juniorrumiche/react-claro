@@ -4,8 +4,8 @@ interface MetodoPagoItemType {
   children?: ReactNode;
 }
 export interface MarcaSliderItemType {
-  title?: string;
-  url?: string;
+  name?: string;
+  image_url?: string;
 }
 
 export interface ListDePlanesItemType {

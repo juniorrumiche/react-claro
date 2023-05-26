@@ -21,9 +21,11 @@ import {
 } from "react-icons/ai";
 import { ChangeEvent, useState } from "react";
 import { ContactCardType } from "../types/componente";
+import { useAuth } from "../context/AuthContext";
 
 export const ContactCard = ({ select_input_items }: ContactCardType) => {
   const [isLoading, setIsLoading] = useState(false);
+  const { ToastOptions } = useAuth();
   const [formData, setFormData] = useState({
     dni: "",
     telefono: "",
@@ -59,23 +61,19 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
     if (response.status == 201) {
       resetForm();
       toast({
+        ...ToastOptions,
         title: "Exito!",
         status: "success",
         description: "sus datos has sido registrados con exito",
-        duration: 4000,
-        isClosable: true,
-        position: "top",
       });
       return;
     }
 
     toast({
+      ...ToastOptions,
       title: "Error!",
       status: "error",
       description: (await response.json()).message || "ha ocurrido un error",
-      duration: 4000,
-      isClosable: true,
-      position: "top",
     });
   };
 
@@ -85,24 +83,25 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
       bgSize="cover"
       bgRepeat="round"
       position="relative"
+      py={10}
     >
       <Stack zIndex={2} py={10} px={5}>
         <Box
           color={useColorModeValue("gray.600", "gray.800")}
           w="full"
           rounded={"lg"}
-          bg={useColorModeValue("white", "gray.50")}
-          boxShadow={"lg"}
           p={8}
         >
           <Stack spacing={4}>
             <FormControl isRequired>
-              <FormLabel>DNI</FormLabel>
-              <InputGroup>
+              <FormLabel color="white">DNI</FormLabel>
+              <InputGroup bg="white" borderRadius="2xl">
                 <InputLeftElement>
-                  <AiOutlineIdcard />
+                  <AiOutlineIdcard size={25} />
                 </InputLeftElement>
                 <Input
+                  py={5}
+                  placeholder="Tu DNI"
                   value={formData.dni}
                   maxLength={8}
                   onChange={(e) => handlerForm(e)}
@@ -113,13 +112,15 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
             </FormControl>
 
             <FormControl isRequired>
-              <FormLabel>Correo Electronico</FormLabel>
-              <InputGroup>
+              <FormLabel color="white">Correo Electronico</FormLabel>
+              <InputGroup bg="white" borderRadius="2xl">
                 <InputLeftElement>
-                  <AiOutlineMail />
+                  <AiOutlineMail size={25} />
                 </InputLeftElement>
 
                 <Input
+                  py={5}
+                  placeholder="Correo Electronico"
                   value={formData.email}
                   onChange={(e) => handlerForm(e)}
                   type="email"
@@ -129,8 +130,12 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
             </FormControl>
             <HStack>
               <FormControl isRequired>
-                <FormLabel>Plan</FormLabel>
-                <Select onChange={(e) => handlerForm(e)} name="opcion">
+                <FormLabel color="white">Plan</FormLabel>
+                <Select
+                  bg="white"
+                  onChange={(e) => handlerForm(e)}
+                  name="opcion"
+                >
                   <option value="">Seleccione</option>
                   {select_input_items.map((item, index) => (
                     <option key={index} value={`${item.value}`}>
@@ -141,14 +146,16 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
               </FormControl>
 
               <FormControl isRequired>
-                <FormLabel>Telefono</FormLabel>
-                <InputGroup>
-                  <InputLeftElement>
-                    <AiFillPhone />
+                <FormLabel color="white">Telefono</FormLabel>
+                <InputGroup bg="white" borderRadius="2xl">
+                  <InputLeftElement bg="white" borderRadius="2xl">
+                    <AiFillPhone size={25} />
                   </InputLeftElement>
 
                   <Input
+                    py={5}
                     value={formData.telefono}
+                    placeholder="Telefono"
                     onChange={(e) => handlerForm(e)}
                     maxLength={9}
                     type="tel"
@@ -160,6 +167,8 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
 
             <Stack spacing={10}>
               <Button
+                mt={3}
+                py={5}
                 isLoading={isLoading}
                 onClick={async () => {
                   setIsLoading(true);
@@ -168,7 +177,8 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
                   setIsLoading(false);
                 }}
                 loadingText="Enviando"
-                colorScheme="red"
+                bg="#E53E3E"
+                color="white"
                 leftIcon={<AiFillSave size={20} />}
               >
                 Enviar

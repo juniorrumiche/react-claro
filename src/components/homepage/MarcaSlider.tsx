@@ -1,32 +1,40 @@
-import { Box, Flex, Heading, Image, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, Heading, useColorModeValue } from "@chakra-ui/react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import Slider from "react-slick";
 import { MarcaSliderItemType } from "../../types/componente";
+import { MarcasTelefonoDB } from "../../db/db";
+import { Link as LinkRoute } from "react-router-dom";
+import { MOVILES_LISTA_PATH } from "../../config/config";
 
-const MarcaSliderItem = (props: MarcaSliderItemType) => {
+const MarcaSliderItem = ({ name, image_url }: MarcaSliderItemType) => {
   return (
     <Box>
-      <Flex
-        py={5}
-        px={10}
-        m={5}
-        flexDir="column"
-        justifyContent="center"
-        alignItems="center"
-        borderRadius="2xl"
-        bg={useColorModeValue("white", "whiteAlpha.200")}
-      >
-        <Image
-          loading="lazy"
-          src={
-            props.url
-              ? `${props.url}`
-              : "https://claroperupoc.vtexassets.com/arquivos/banner-marcar-2023-zte.png"
-          }
-        />
-        <Heading fontWeight="semibold" size="md" textAlign="center">
-          {props.title}
-        </Heading>
-      </Flex>
+      <LinkRoute to={MOVILES_LISTA_PATH + '/' + name?.toLowerCase()}>
+        <Flex
+          py={10}
+          px={10}
+          minHeight={310}
+          m={5}
+          flexDir="column"
+          justifyContent="center"
+          alignItems="center"
+          borderRadius="2xl"
+          bg={useColorModeValue("white", "whiteAlpha.200")}
+        >
+          <LazyLoadImage
+            loading="lazy"
+            src={
+              image_url
+                ? `${image_url}`
+                : "https://claroperupoc.vtexassets.com/arquivos/banner-marcar-2023-zte.png"
+            }
+          />
+          <Heading mt={2} fontWeight="semibold" size="md" textAlign="center">
+            {name}
+          </Heading>
+        </Flex>
+      </LinkRoute>
     </Box>
   );
 };
@@ -49,11 +57,9 @@ export const MarcaSlider = () => {
 
   return (
     <Slider dots={true} arrows={false} {...settings}>
-      <MarcaSliderItem title="SAMSUMG" />
-      <MarcaSliderItem title="IPHONE" />
-      <MarcaSliderItem title="OPO" />
-      <MarcaSliderItem title="XIAOMI" />
-      <MarcaSliderItem title="HUWAEI" />
+      {MarcasTelefonoDB.map((marca, index) => (
+        <MarcaSliderItem key={index} {...marca} />
+      ))}
     </Slider>
   );
 };

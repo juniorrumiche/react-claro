@@ -17,6 +17,7 @@ import {
   Image,
   useColorMode,
   HStack,
+  Button,
 } from "@chakra-ui/react";
 import {
   MoonIcon,
@@ -26,7 +27,12 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import { FULL_CLARO_PATH, PLANES_NETFLIX_PATH } from "../../config/config";
+import {
+  FULL_CLARO_PATH,
+  PLANES_NETFLIX_PATH,
+  POSTPAGO_CLARO_PATH,
+  PROMOCIONES_PATH,
+} from "../../config/config";
 
 export const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -102,6 +108,7 @@ const DesktopNav = () => {
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
+                bg="none"
                 p={2}
                 fontSize={"md"}
                 fontWeight={500}
@@ -109,6 +116,7 @@ const DesktopNav = () => {
                 _hover={{
                   textDecoration: "none",
                   color: linkHoverColor,
+                  background: useColorModeValue("whiteAlpha.100", "gray.700"),
                 }}
               >
                 {navItem.label}
@@ -140,14 +148,13 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ icon, label, href, subLabel }: NavItem) => {
   return (
-    <Link
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
-    >
-      <LinkRoute to={href ?? "/"}>
+    <LinkRoute to={href ?? "/"}>
+      <Box
+        display={"block"}
+        p={2}
+        rounded={"md"}
+        _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+      >
         <Stack direction={"row"} align={"center"}>
           <Box>
             <HStack>
@@ -176,8 +183,8 @@ const DesktopSubNav = ({ icon, label, href, subLabel }: NavItem) => {
             <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
-      </LinkRoute>
-    </Link>
+      </Box>
+    </LinkRoute>
   );
 };
 
@@ -279,7 +286,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: "Postpago",
         subLabel: "Conéctate sin preocupaciones con nosotros.",
-        href: "/moviles/postpago",
+        href: POSTPAGO_CLARO_PATH,
       },
       {
         label: "Prepago",
@@ -305,7 +312,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: "Promociones Claro",
         subLabel: "Con nuestras promociones, más por menos",
-        href: "/promociones",
+        href: PROMOCIONES_PATH,
       },
     ],
   },

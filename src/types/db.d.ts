@@ -1,3 +1,8 @@
+export interface MarcasTelefonoType {
+  name: string;
+  image_url: string;
+}
+
 export interface SelectInputType {
   value: string;
   text: string;

@@ -30,7 +30,7 @@ export const PlanesNetflixPage = () => {
             </Text>
           </VStack>
         </Flex>
-        <SimpleGrid py={10} columns={{ base: 1, md: 3 }} gap={5}>
+        <SimpleGrid py={10} columns={{ base: 1, md: 3 }} gap={8}>
           {PlanesNetflixDB.map((plan, index) => (
             <CardPlanNetflix key={index} {...plan} />
           ))}

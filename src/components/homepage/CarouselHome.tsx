@@ -3,13 +3,14 @@ import {
   Box,
   Heading,
   Container,
-  Image,
   Grid,
   GridItem,
   HStack,
   Button,
 } from "@chakra-ui/react";
 import Slider from "react-slick";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Overlay } from "../Overlay";
 
 const settings = {
   dots: false,
@@ -74,7 +75,7 @@ export const CarouselHome = () => {
               key={index}
               boxShadow="2xl"
               height={"lg"}
-              backgroundColor="black"
+              backgroundColor="gray.800"
               p={3}
             >
               <Grid
@@ -87,13 +88,11 @@ export const CarouselHome = () => {
               >
                 <GridItem w="100%" h={{ base: "4xs", lg: "lg" }} colSpan={2}>
                   <HStack w="full" h="full">
-                    <Box
-                      w="full"
-                      height={{ base: "xs", lg: "lg" }}
-                      position="absolute"
-                      css={{ backgroundColor: "rgba(10,10,10, 0.4)" }}
-                    ></Box>
-                    <Image alt="Claro images Moviles " src={card.image}></Image>
+                    <Overlay />
+                    <LazyLoadImage
+                      alt="Claro images Moviles "
+                      src={card.image}
+                    ></LazyLoadImage>
                   </HStack>
                 </GridItem>
 

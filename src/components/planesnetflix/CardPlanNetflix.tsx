@@ -49,7 +49,7 @@ export const CardPlanNetflix = ({
           </Stack>
         </Stack>
 
-        <Box bg={useColorModeValue("white", "gray.900")} px={6} py={10}>
+        <Box bg={useColorModeValue("white", "gray.800")} px={6} py={10}>
           <List spacing={3}>
             <ListItem>
               <ListIcon as={CheckIcon} color="green.400" />

@@ -10,7 +10,7 @@ export const Overlay = () => {
       right="0"
       left="0"
       zIndex={1}
-      css={{ backgroundColor: "rgba(10,10,10, 0.0)" }}
+      css={{ backgroundColor: "rgba(10,10,10, 0.2)" }}
     ></Box>
   );
 };

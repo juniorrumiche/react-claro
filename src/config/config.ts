@@ -13,3 +13,6 @@ export const WEB_DATA_PATH = "data/web";
 export const HOME_PATH = "/";
 export const FULL_CLARO_PATH = "/full-claro";
 export const PLANES_NETFLIX_PATH = "/planes/netflix";
+export const POSTPAGO_CLARO_PATH = "/planes/postpago";
+export const PROMOCIONES_PATH = "/promociones";
+export const MOVILES_LISTA_PATH = "/moviles";

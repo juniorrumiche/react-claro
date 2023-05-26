@@ -13,17 +13,17 @@ import {
   Image,
   Stack,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { AiOutlineFundView } from "react-icons/ai";
 
 const PhoneCard = () => {
   return (
     <Flex
-      shadow="lg"
       borderRadius="2xl"
       p={5}
       flexDirection="column"
-      bg="whiteAlpha.100"
+      bg={useColorModeValue('white', 'whiteAlpha.100')}
     >
       <Box textAlign="center" w="full">
         <Heading color="gray" size="md">
