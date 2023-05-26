@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { reactTableStyle } from "../../theme";
+import { LoaderDatosTabla } from "../../components/LoaderDatosTabla";
 
 interface IPerson {
   id: number;
@@ -57,7 +59,7 @@ const columns: TableColumn<IPerson>[] = [
 export const DatosLandingPage = () => {
   const [clientesData, setClientesData] = useState<IPerson[]>([]);
   const [pending, setPending] = useState(true);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const toast = useToast();
 
   useEffect(() => {
@@ -87,7 +89,7 @@ export const DatosLandingPage = () => {
               isClosable: true,
             });
             Cookies.remove("_session");
-            navigate('/login')
+            navigate("/login");
           }
         }
       }
@@ -101,18 +103,20 @@ export const DatosLandingPage = () => {
       <Container maxWidth="8xl" py={5}>
         <Box
           p={5}
-          bg={useColorModeValue("white", "whiteAlpha.200")}
+          bg={useColorModeValue("white", "whiteAlpha.100")}
           rounded="lg"
         >
           <DataTable
-            theme={useColorModeValue("light", "dark")}
+            theme={useColorModeValue("light", "custom")}
             progressPending={pending}
+            progressComponent={<LoaderDatosTabla />}
             highlightOnHover
             fixedHeader
             fixedHeaderScrollHeight="400px"
             title="Datos Landing"
             columns={columns}
             data={clientesData}
+            customStyles={reactTableStyle}
             pagination
           />
         </Box>

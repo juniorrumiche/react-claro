@@ -34,7 +34,7 @@ export const Navbar = () => {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("white", "black")}
+        bg={useColorModeValue("white", "#27303f")}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
@@ -262,12 +262,12 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         icon: <MdWifi mr={3} />,
         label: "Hogar 1 Play",
-        href: "#",
+        href: "/planes/1play",
       },
       {
         icon: <MdWifi mr={3} />,
         label: "Hogar 2 Play",
-        href: "#",
+        href: "/planes/2play",
       },
     ],
   },

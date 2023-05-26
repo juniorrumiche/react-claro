@@ -18,8 +18,9 @@ import {
   Stack,
   Heading,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Cookies from "js-cookie";
 import { MdLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -48,6 +49,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 
 export const NavbarAdmin = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {toggleColorMode, colorMode} = useColorMode()
   const navigate = useNavigate();
 
   const logoutUser = () => {
@@ -57,7 +59,7 @@ export const NavbarAdmin = () => {
 
   return (
     <>
-      <Box bg={useColorModeValue("white", "gray.900")} px={4}>
+      <Box bg={useColorModeValue("white", "#27303f")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -83,6 +85,13 @@ export const NavbarAdmin = () => {
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
+            <IconButton
+            mx={3}
+              borderRadius="2xl"
+              aria-label="..."
+              icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              onClick={toggleColorMode}
+            />
             <Menu>
               <MenuButton
                 as={Button}
