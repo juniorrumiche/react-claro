@@ -26,6 +26,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import { FULL_CLARO_PATH, PLANES_NETFLIX_PATH } from "../../config/config";
 
 export const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -293,12 +294,12 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: "Full Claro",
         subLabel: "Todo lo que necesitas esta en Claro.",
-        href: "/full-claro",
+        href: FULL_CLARO_PATH,
       },
       {
         label: "Promociones Netflix",
         subLabel: "Netflix, en todas partes contigo",
-        href: "/planes/netflix",
+        href: PLANES_NETFLIX_PATH,
       },
 
       {

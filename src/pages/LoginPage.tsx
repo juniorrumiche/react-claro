@@ -11,9 +11,11 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useState } from "react";
-import Cookie from "js-cookie";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { ADMIN_PATH, API_AUTH_PATH, COOKIE_NAME } from "../config/config";
+import Cookies from "js-cookie";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -22,36 +24,33 @@ export const LoginPage = () => {
   const formBackground = useColorModeValue("whiteAlpha.400", "whiteAlpha.100");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { ToastOptions, sleep, setIsAuthenticated } = useAuth();
   const toast = useToast();
 
-  const loginUser = async () => {
+  const login = async () => {
     try {
-      let response = await axios.post("/api/v1/auth", {
+      let response = await axios.post(API_AUTH_PATH, {
         email,
         password,
       });
-      const token = response.data.token;
-
+      const token = response.data.token || false;
       if (response.status == 200 && token) {
-        Cookie.set("_session", response.data.token, { expires: 1 / 24 });
-        navigate("/admin");
+        Cookies.set(COOKIE_NAME, response.data.token, { expires: 1 / 24 });
+        setIsAuthenticated && setIsAuthenticated(true);
+        navigate(ADMIN_PATH);
       }
     } catch (error) {
       if (axios.isAxiosError(error)) {
         toast({
-          position: "top",
+          ...ToastOptions,
           status: "error",
           title: "Error",
           description: error.response?.data.message || "ha ocurrido un error",
-          isClosable: true,
-          duration: 5000,
         });
       }
     }
   };
 
-  const sleep = (ms: number) =>
-    new Promise((resolve) => setTimeout(resolve, ms));
   return (
     <Flex
       h="100vh"
@@ -89,7 +88,7 @@ export const LoginPage = () => {
           onClick={async () => {
             setIsLoading(true);
             await sleep(2000);
-            await loginUser();
+            await login();
             setIsLoading(false);
           }}
           isLoading={isloading}

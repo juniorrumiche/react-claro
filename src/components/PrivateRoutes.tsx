@@ -2,15 +2,13 @@ import { ReactElement, ReactNode, useEffect, useState } from "react";
 import { SessionLoader } from "./SessionLoader";
 import Cookies from "js-cookie";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { LOGIN_PATH } from "../config/config";
 
-interface ProtectedRoutesType {
-  children: ReactNode | ReactElement;
-}
-
-export const ProtectedRoutes = ({ children }: ProtectedRoutesType) => {
-  const [isAuth, setIsAuth] = useState(false);
+export const PrivateRoutes = () => {
   const navigate = useNavigate();
+  const { setIsAuthenticated, isAuthenticated } = useAuth();
 
   useEffect(() => {
     const timeout = setTimeout(async () => {
@@ -26,16 +24,22 @@ export const ProtectedRoutes = ({ children }: ProtectedRoutesType) => {
           response.status == 200 &&
           (response.data?.status || false) == true
         ) {
-          setIsAuth(true);
+          setIsAuthenticated && setIsAuthenticated(true);
           return;
         }
         console.log(response);
       } catch (error) {
-        navigate("/login");
+        navigate(LOGIN_PATH);
       }
     }, 1000);
     return () => clearTimeout(timeout);
   }, []);
 
-  return isAuth ? <> {children}</> : <SessionLoader />;
+  return isAuthenticated ? (
+    <>
+      <Outlet />
+    </>
+  ) : (
+    <SessionLoader />
+  );
 };

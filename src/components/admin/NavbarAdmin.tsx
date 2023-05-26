@@ -1,11 +1,9 @@
-import { ReactNode } from "react";
 import { Link as LinkRoute } from "react-router-dom";
 import {
   Box,
   Flex,
   Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
   Menu,
@@ -33,23 +31,32 @@ const Links = [
   { name: "Equipos", path: "/admin" },
 ];
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    transition="all .7s ease"
-    _hover={{
-      textDecoration: "none",
-      borderBottom: "2px solid gray",
-    }}
-  >
-    {children}
-  </Link>
+interface NavLinkTypes {
+  name: string;
+  path: string;
+}
+
+const NavLink = ({ name, path }: NavLinkTypes) => (
+  <LinkRoute to={path}>
+    <Button
+      px={2}
+      bg="none"
+      fontWeight="normal"
+      py={1}
+      transition="all .7s ease"
+      _hover={{
+        textDecoration: "none",
+        borderBottom: "2px solid gray",
+      }}
+    >
+      {name}
+    </Button>
+  </LinkRoute>
 );
 
 export const NavbarAdmin = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const {toggleColorMode, colorMode} = useColorMode()
+  const { toggleColorMode, colorMode } = useColorMode();
   const navigate = useNavigate();
 
   const logoutUser = () => {
@@ -70,7 +77,7 @@ export const NavbarAdmin = () => {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Heading fontSize="lg">Tienda Movil Virtual</Heading>
+              <Heading fontSize="lg">Tienda Claro</Heading>
             </Box>
             <HStack
               as={"nav"}
@@ -78,15 +85,13 @@ export const NavbarAdmin = () => {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link, index) => (
-                <NavLink key={index}>
-                  <LinkRoute to={link.path}>{link.name}</LinkRoute>
-                </NavLink>
+                <NavLink name={link.name} path={link.path} key={index} />
               ))}
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
             <IconButton
-            mx={3}
+              mx={3}
               borderRadius="2xl"
               aria-label="..."
               icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}

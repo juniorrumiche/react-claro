@@ -1,11 +1,49 @@
-import { RouterProvider } from "react-router-dom";
-import { router } from "./router";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import { PrivateRoutes } from "./components/PrivateRoutes";
+import { DashboardPage } from "./pages/admin/DashboardPage";
+import {
+  FULL_CLARO_PATH,
+  HOME_PATH,
+  LANDING_DATA_PATH,
+  LOGIN_PATH,
+  PLANES_NETFLIX_PATH,
+  WEB_DATA_PATH,
+} from "./config/config";
+import { PublicRoutes } from "./components/PublicRoutes";
+import { LoginPage } from "./pages/LoginPage";
+import { DatosLandingPage } from "./pages/admin/DatosLanding";
+import { DatosWeb } from "./pages/admin/DatosWeb";
+import { HomePage } from "./pages/HomePage";
+import { NotFoundPage } from "./pages/404";
+import { FullClaroPage } from "./pages/FullClaroPage";
+import { PlanesNetflixPage } from "./pages/PlanesNetflixPage";
 
 function App() {
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route>
+            <Route path="/" element={<PublicRoutes />}>
+              <Route path={HOME_PATH} element={<HomePage />} />
+              <Route path={LOGIN_PATH} element={<LoginPage />} />
+              <Route path={FULL_CLARO_PATH} element={<FullClaroPage />} />
+              <Route
+                path={PLANES_NETFLIX_PATH}
+                element={<PlanesNetflixPage />}
+              />
+            </Route>
+          </Route>
+          <Route path="/admin" element={<PrivateRoutes />}>
+            <Route index element={<DashboardPage />}></Route>
+            <Route path={LANDING_DATA_PATH} element={<DatosLandingPage />} />
+            <Route path={WEB_DATA_PATH} element={<DatosWeb />}></Route>
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
