@@ -9,6 +9,7 @@ import { NotFoundPage } from "./pages/404";
 import { DashboardPage } from "./pages/admin/DashboardPage";
 import { DatosWeb } from "./pages/admin/DatosWeb";
 import { DatosLandingPage } from "./pages/admin/DatosLanding";
+import { ProtectedRoutes } from "./components/ProtectedRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -36,19 +37,36 @@ export const router = createBrowserRouter([
     path: "/login",
     element: <LoginPage />,
   },
+
+
+  // rutas protegidas
   {
     path: "/admin",
-    element: <DashboardPage />,
+    element:(
+      <ProtectedRoutes>
+        <DashboardPage />
+      </ProtectedRoutes>
+    
+    ) 
   },
 
   {
     path: "/admin/data/web",
-    element: <DatosWeb />,
+    element:(
+      <ProtectedRoutes>
+        <DatosWeb />
+      </ProtectedRoutes>
+    
+    ) 
   },
 
   {
     path: "/admin/data/landing",
-    element: <DatosLandingPage />,
+    element: (
+      <ProtectedRoutes>
+        <DatosLandingPage />
+      </ProtectedRoutes>
+    ),
   },
   {
     path: "*",
