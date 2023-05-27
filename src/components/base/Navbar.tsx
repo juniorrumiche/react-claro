@@ -1,4 +1,5 @@
-import { MdWifi } from "react-icons/md";
+import { MdOutlineMonitor, MdPhone, MdWifi } from "react-icons/md";
+import { AiOutlinePlus } from "react-icons/ai";
 import { Link as LinkRoute } from "react-router-dom";
 import {
   Box,
@@ -17,7 +18,6 @@ import {
   Image,
   useColorMode,
   HStack,
-  Button,
 } from "@chakra-ui/react";
 import {
   MoonIcon,
@@ -30,6 +30,12 @@ import {
 import {
   FULL_CLARO_PATH,
   PLANES_NETFLIX_PATH,
+  PLAY1_PATH,
+  PLAY2_AVANZADO_PATH,
+  PLAY2_PATH,
+  PLAY2_SUPERIOR_PATH,
+  PLAY3_AVANZADO_PATH,
+  PLAY3_SUPERIOR_PATH,
   POSTPAGO_CLARO_PATH,
   PROMOCIONES_PATH,
 } from "../../config/config";
@@ -44,11 +50,9 @@ export const Navbar = () => {
         bg={useColorModeValue("white", "#27303f")}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
+        boxShadow="md"
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
       >
         <Flex
@@ -158,7 +162,6 @@ const DesktopSubNav = ({ icon, label, href, subLabel }: NavItem) => {
         <Stack direction={"row"} align={"center"}>
           <Box>
             <HStack>
-              {icon || ""}
               <Text
                 transition={"all .3s ease"}
                 _groupHover={{ color: "pink.400" }}
@@ -166,6 +169,8 @@ const DesktopSubNav = ({ icon, label, href, subLabel }: NavItem) => {
               >
                 {label}
               </Text>
+
+              {icon || ""}
             </HStack>
             <Text color={"gray.500"} fontSize={"sm"}>
               {subLabel}
@@ -270,12 +275,58 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         icon: <MdWifi mr={3} />,
         label: "Hogar 1 Play",
-        href: "/planes/1play",
+        href: PLAY1_PATH,
       },
       {
-        icon: <MdWifi mr={3} />,
+        icon: (
+          <>
+            <MdWifi /> <AiOutlinePlus size={10} /> <MdPhone />{" "}
+          </>
+        ),
         label: "Hogar 2 Play",
-        href: "/planes/2play",
+        href: PLAY2_PATH,
+      },
+
+      {
+        icon: (
+          <>
+            <MdWifi /> <AiOutlinePlus size={10} /> <MdOutlineMonitor />{" "}
+          </>
+        ),
+        label: "Hogar 2 Avanzado",
+        href: PLAY2_AVANZADO_PATH,
+      },
+
+      {
+        icon: (
+          <>
+            <MdWifi /> <AiOutlinePlus size={10} /> <MdOutlineMonitor />{" "}
+          </>
+        ),
+        label: "Hogar 2 Superior",
+        href: PLAY2_SUPERIOR_PATH,
+      },
+
+      {
+        icon: (
+          <>
+            <MdWifi /> <AiOutlinePlus size={10} /> <MdOutlineMonitor />{" "}
+            <AiOutlinePlus size={10} /> <MdPhone />
+          </>
+        ),
+        label: "Hogar 3 Avanzado",
+        href: PLAY3_AVANZADO_PATH,
+      },
+
+      {
+        icon: (
+          <>
+            <MdWifi /> <AiOutlinePlus size={10} /> <MdOutlineMonitor />{" "}
+            <AiOutlinePlus size={10} /> <MdPhone />
+          </>
+        ),
+        label: "Hogar 3 Superior",
+        href: PLAY3_SUPERIOR_PATH,
       },
     ],
   },

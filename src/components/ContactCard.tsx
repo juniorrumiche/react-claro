@@ -136,9 +136,15 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
                   onChange={(e) => handlerForm(e)}
                   name="opcion"
                 >
-                  <option value="">Seleccione</option>
+                  <option style={{ backgroundColor: "white" }} value="">
+                    Seleccione
+                  </option>
                   {select_input_items.map((item, index) => (
-                    <option key={index} value={`${item.value}`}>
+                    <option
+                      style={{ backgroundColor: "white" }}
+                      key={index}
+                      value={`${item.value}`}
+                    >
                       {item.text}
                     </option>
                   ))}
