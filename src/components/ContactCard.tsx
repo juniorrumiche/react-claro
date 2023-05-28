@@ -182,12 +182,12 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
 
                   setIsLoading(false);
                 }}
-                loadingText="Enviando"
+                loadingText="Enviando informacion"
                 bg="#E53E3E"
                 color="white"
                 leftIcon={<AiFillSave size={20} />}
               >
-                Enviar
+                Enviar informacion
               </Button>
             </Stack>
           </Stack>

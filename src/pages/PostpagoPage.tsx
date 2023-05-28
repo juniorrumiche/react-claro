@@ -16,6 +16,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { AiOutlineFundView } from "react-icons/ai";
+import { Helmet } from "react-helmet";
 
 const PhoneCard = () => {
   return (
@@ -23,7 +24,7 @@ const PhoneCard = () => {
       borderRadius="2xl"
       p={5}
       flexDirection="column"
-      bg={useColorModeValue('white', 'whiteAlpha.100')}
+      bg={useColorModeValue("white", "whiteAlpha.100")}
     >
       <Box textAlign="center" w="full">
         <Heading color="gray" size="md">
@@ -66,6 +67,9 @@ const PhoneCard = () => {
 export const PostpagoPage = () => {
   return (
     <main>
+      <Helmet>
+        <title>Moviles Postpago</title>
+      </Helmet>
       <Navbar />
       <ContactCard select_input_items={[]} />
       <Grid

@@ -1,4 +1,4 @@
-import { Box, Center, Spinner, Text, VStack } from "@chakra-ui/react";
+import { Box, Center, Image, VStack } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 
 const fadeInOut = keyframes`
@@ -34,16 +34,10 @@ export const SessionLoader = () => {
         rounded="md"
       >
         <VStack>
-          <Spinner
-            color="teal"
-            thickness="4px"
-            speed="0.75s"
-            emptyColor="gray.200"
-            size="lg"
+          <Image
+            w={{ base: "50%", md: "10%" }}
+            src="https://logodownload.org/wp-content/uploads/2014/02/claro-logo-8.png"
           />
-          <Text mt={2} fontSize="lg" fontWeight='semibold' color="gray.400">
-            Validando sesión...
-          </Text>
         </VStack>
       </Box>
     </Center>

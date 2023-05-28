@@ -10,17 +10,24 @@ import { MOVILES_LISTA_PATH } from "../../config/config";
 const MarcaSliderItem = ({ name, image_url }: MarcaSliderItemType) => {
   return (
     <Box>
-      <LinkRoute to={MOVILES_LISTA_PATH + '/' + name?.toLowerCase()}>
+      <LinkRoute to={MOVILES_LISTA_PATH + "/" + name?.toLowerCase()}>
         <Flex
+          borderWidth={1}
+          borderColor="transparent"
           py={10}
           px={10}
           minHeight={310}
+          transition="all"
+          transitionDuration=".5s"
           m={5}
           flexDir="column"
           justifyContent="center"
           alignItems="center"
           borderRadius="2xl"
           bg={useColorModeValue("white", "whiteAlpha.200")}
+          _hover={{
+            borderColor: useColorModeValue("gray.300", "whiteAlpha.400"),
+          }}
         >
           <LazyLoadImage
             loading="lazy"

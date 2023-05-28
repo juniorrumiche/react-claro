@@ -3,8 +3,81 @@ import {
   Planes1PlayDBType,
   Planes2PlayAvanzadoDBType,
   Planes2PlaySimpleDBType,
+  PlanesBaseType,
   PlanesNetflixDBType,
 } from "../types/db";
+
+export const Planes1Play: Array<PlanesBaseType> = [
+  {
+    nombre_plan: "Plan Claro S/.70",
+    velocidad: 50,
+    duracion_promo: 1,
+    precio_promo: 0,
+    precio_real: 70.0,
+    mb_standar: 50,
+    mb_fullclaro: 70,
+  },
+
+  {
+    nombre_plan: "Plan Claro S/.80",
+    velocidad: 100,
+    duracion_promo: 1,
+    precio_promo: 0,
+    precio_real: 80.0,
+    mb_standar: 100,
+    mb_fullclaro: 200,
+  },
+
+  {
+    nombre_plan: "Plan Claro S/.95",
+    velocidad: 150,
+    duracion_promo: 1,
+    precio_promo: 0,
+    precio_real: 95.0,
+    mb_standar: 150,
+    mb_fullclaro: 300,
+  },
+
+  {
+    nombre_plan: "Plan Claro S/.110",
+    velocidad: 200,
+    duracion_promo: 1,
+    precio_promo: 0,
+    precio_real: 110.0,
+    mb_standar: 200,
+    mb_fullclaro: 400,
+  },
+
+  {
+    nombre_plan: "Plan Claro S/.200",
+    velocidad: 300,
+    duracion_promo: 1,
+    precio_promo: 0,
+    precio_real: 200.0,
+    mb_standar: 200,
+    mb_fullclaro: 400,
+  },
+
+  {
+    nombre_plan: "Plan Claro S/.240",
+    velocidad: 500,
+    duracion_promo: 1,
+    precio_promo: 0,
+    precio_real: 240.0,
+    mb_standar: 500,
+    mb_fullclaro: 1000,
+  },
+
+  {
+    nombre_plan: "Plan Claro S/.440",
+    velocidad: 1000,
+    duracion_promo: 1,
+    precio_promo: 0,
+    precio_real: 440.0,
+    mb_standar: 1000,
+    mb_fullclaro: 2000,
+  },
+];
 
 export const MarcasTelefonoDB: Array<MarcasTelefonoType> = [
   {

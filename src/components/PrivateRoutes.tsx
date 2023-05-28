@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { SessionLoader } from "./SessionLoader";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -31,7 +31,7 @@ export const PrivateRoutes = () => {
       } catch (error) {
         navigate(LOGIN_PATH);
       }
-    }, 1000);
+    }, 3500);
     return () => clearTimeout(timeout);
   }, []);
 

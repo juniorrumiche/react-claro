@@ -5,10 +5,15 @@ import { CarouselHome } from "../components/homepage/CarouselHome";
 import { MarcaSlider } from "../components/homepage/MarcaSlider";
 import { MetodoPago } from "../components/homepage/MetodoPago";
 import { ListaDePlanes } from "../components/homepage/ListaDePlanes";
+import { Helmet } from "react-helmet";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 export const HomePage = () => {
   return (
     <>
+      <Helmet>
+        <title>Tienda Claro</title>
+      </Helmet>
       <Navbar />
       <CarouselHome />
       <MetodoPago />
@@ -31,7 +36,9 @@ export const HomePage = () => {
             Las mejores marcas en equipos móviles
           </Heading>
         </Center>
-        <MarcaSlider />
+        <LazyLoadComponent>
+          <MarcaSlider />
+        </LazyLoadComponent>
       </Box>
       <Footer />
     </>

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { PrivateRoutes } from "./components/PrivateRoutes";
 import { DashboardPage } from "./pages/admin/DashboardPage";
