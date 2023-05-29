@@ -2,6 +2,7 @@ import { ThemeConfig, extendTheme } from "@chakra-ui/react";
 import type { StyleFunctionProps } from "@chakra-ui/styled-system";
 import { mode } from "@chakra-ui/theme-tools";
 import { createTheme } from "react-data-table-component";
+import "@fontsource/roboto"; // Default weight is 400
 
 const config: ThemeConfig = {
   initialColorMode: "light",
@@ -10,6 +11,10 @@ const config: ThemeConfig = {
 
 export const theme = extendTheme({
   ...config,
+  fonts: {
+    heading: "Roboto",
+    body: "Roboto",
+  },
   styles: {
     global: (props: StyleFunctionProps) => ({
       body: {

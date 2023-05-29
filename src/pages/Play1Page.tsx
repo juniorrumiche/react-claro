@@ -6,6 +6,7 @@ import { CardPlanesPlay } from "../components/CardPlanesPlay";
 import { MdWifi } from "react-icons/md";
 import { Footer } from "../components/base/Footer";
 import { Helmet } from "react-helmet";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 export const Play1Page = () => {
   return (
@@ -22,11 +23,13 @@ export const Play1Page = () => {
             <Heading>Elige el paquete de Internet ideal para tu hogar</Heading>
           </VStack>
         </Box>
-        <SimpleGrid py={10} columns={{ base: 1, md: 3 }} gap={8}>
-          {Planes1Play.map((plan, index) => (
-            <CardPlanesPlay key={index} {...plan} />
-          ))}
-        </SimpleGrid>
+        <LazyLoadComponent>
+          <SimpleGrid py={10} columns={{ base: 1, md: 3 }} gap={8}>
+            {Planes1Play.map((plan, index) => (
+              <CardPlanesPlay key={index} {...plan} />
+            ))}
+          </SimpleGrid>
+        </LazyLoadComponent>
       </Container>
       <Footer />
     </>

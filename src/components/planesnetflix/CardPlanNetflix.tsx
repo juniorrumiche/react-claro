@@ -26,7 +26,7 @@ export const CardPlanNetflix = ({
         maxW={"330px"}
         w={"full"}
         bg={useColorModeValue("white", "gray.800")}
-        boxShadow={"sm"}
+        borderRadius="2xl"
         rounded={"md"}
         overflow={"hidden"}
       >
