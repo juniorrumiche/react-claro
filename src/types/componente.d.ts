@@ -17,4 +17,5 @@ export interface CardPlanNetFlixType extends PlanesNetflixDBType {}
 
 export interface ContactCardType {
   select_input_items: Array<Planes1PlayDBType>;
+  image_url?: string;
 }

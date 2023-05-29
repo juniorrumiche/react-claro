@@ -109,7 +109,10 @@ export const PlanesNetflixPage = () => {
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
       <Navbar />
-      <ContactCard select_input_items={Planes1PlayDB} />
+      <ContactCard
+        image_url="https://www.claro.com.pe/portal/pe-2020/recursos_contenido/claro-home/e7d2e4e1-e1de-48fa-a381-448ed1752c29-Banner-Principal-Atlas-2300x450-Desktop+-+netflix-feb23-v2.jpg"
+        select_input_items={Planes1PlayDB}
+      />
       <Container maxWidth="5xl" py={10} px={5}>
         <Flex justifyContent="center">
           <Heading fontWeight="semibold" size="lg">

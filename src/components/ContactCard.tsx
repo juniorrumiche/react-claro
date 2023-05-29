@@ -22,8 +22,13 @@ import {
 import { ChangeEvent, useState } from "react";
 import { ContactCardType } from "../types/componente";
 import { useAuth } from "../context/AuthContext";
+import axios from "axios";
+import { API_CLIENTE_ADD } from "../config/config";
 
-export const ContactCard = ({ select_input_items }: ContactCardType) => {
+export const ContactCard = ({
+  select_input_items,
+  image_url,
+}: ContactCardType) => {
   const [isLoading, setIsLoading] = useState(false);
   const { ToastOptions } = useAuth();
   const [formData, setFormData] = useState({
@@ -42,7 +47,7 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
     });
   };
 
-  const resetForm = () => {
+  const clearForm = () => {
     setFormData({
       dni: "",
       telefono: "",
@@ -51,35 +56,41 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
   };
 
   const submitForm = async () => {
-    let response = await fetch("/api/v1/clientes/add", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    if (response.status == 201) {
-      resetForm();
-      toast({
-        ...ToastOptions,
-        title: "Exito!",
-        status: "success",
-        description: "sus datos has sido registrados con exito",
-      });
-      return;
-    }
+    try {
+      let response = await axios.post(
+        API_CLIENTE_ADD,
+        JSON.stringify(formData),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-    toast({
-      ...ToastOptions,
-      title: "Error!",
-      status: "error",
-      description: (await response.json()).message || "ha ocurrido un error",
-    });
+      if (response.status == 201) {
+        toast({
+          ...ToastOptions,
+          status: "success",
+          title: "Registrado",
+          description: "sus datos han sido registrados",
+        });
+       clearForm() 
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        toast({
+          ...ToastOptions,
+          title: "Error",
+          status: "error",
+          description: error.response?.data.message || "Ha ocurrido un error",
+        });
+      }
+    }
   };
 
   return (
     <Flex
-      bgImage="url('/banner.jpg')"
+      bgImage={image_url ? image_url : " url('/banner.jpg')"}
       bgSize="cover"
       bgRepeat="round"
       position="relative"
@@ -183,6 +194,7 @@ export const ContactCard = ({ select_input_items }: ContactCardType) => {
                   setIsLoading(false);
                 }}
                 loadingText="Enviando informacion"
+                colorScheme="red"
                 bg="#E53E3E"
                 color="white"
                 leftIcon={<AiFillSave size={20} />}

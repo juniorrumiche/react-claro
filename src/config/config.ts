@@ -1,6 +1,7 @@
 export const COOKIE_NAME = "_session";
 
 export const API_AUTH_PATH = "/api/v1/auth";
+export const API_CLIENTE_ADD = "/api/v1/clientes/add";
 export const API_SESSION_VERIFY = "/api/v1/auth/verify";
 
 // rutas protegidas
