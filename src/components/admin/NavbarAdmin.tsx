@@ -22,10 +22,10 @@ import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Cookies from "js-cookie";
 import { MdLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { WEB_DATA_PATH } from "../../config/config";
 
 const Links = [
-  { name: "Datos Landing", path: "/admin/data/landing" },
-  { name: "Datos Web", path: "/admin/data/web" },
+  { name: "Datos", path: WEB_DATA_PATH },
   { name: "Usuarios", path: "/admin" },
   { name: "Planes", path: "/admin" },
   { name: "Equipos", path: "/admin" },

@@ -1,5 +1,4 @@
-import { Box, Container, useColorModeValue, useToast } from "@chakra-ui/react";
-import { NavbarAdmin } from "../../components/admin/NavbarAdmin";
+import { Box, useColorModeValue, useToast } from "@chakra-ui/react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
@@ -56,7 +55,7 @@ const columns: TableColumn<IPerson>[] = [
   },
 ];
 
-export const DatosLandingPage = () => {
+export const DatosLanding = () => {
   const [clientesData, setClientesData] = useState<IPerson[]>([]);
   const [pending, setPending] = useState(true);
   const navigate = useNavigate();
@@ -98,29 +97,20 @@ export const DatosLandingPage = () => {
   }, []);
 
   return (
-    <>
-      <NavbarAdmin />
-      <Container maxWidth="8xl" py={5}>
-        <Box
-          p={5}
-          bg={useColorModeValue("white", "whiteAlpha.100")}
-          rounded="lg"
-        >
-          <DataTable
-            theme={useColorModeValue("light", "custom")}
-            progressPending={pending}
-            progressComponent={<LoaderDatosTabla />}
-            highlightOnHover
-            fixedHeader
-            fixedHeaderScrollHeight="400px"
-            title="Datos Landing"
-            columns={columns}
-            data={clientesData}
-            customStyles={reactTableStyle}
-            pagination
-          />
-        </Box>
-      </Container>
-    </>
+    <Box p={5} bg={useColorModeValue("white", "whiteAlpha.100")} rounded="lg">
+      <DataTable
+        theme={useColorModeValue("light", "custom")}
+        progressPending={pending}
+        progressComponent={<LoaderDatosTabla />}
+        highlightOnHover
+        fixedHeader
+        fixedHeaderScrollHeight="400px"
+        title="Datos Landing"
+        columns={columns}
+        data={clientesData}
+        customStyles={reactTableStyle}
+        pagination
+      />
+    </Box>
   );
 };

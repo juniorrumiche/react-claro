@@ -7,7 +7,6 @@ export const API_SESSION_VERIFY = "/api/v1/auth/verify";
 // rutas protegidas
 export const LOGIN_PATH = "/login";
 export const ADMIN_PATH = "/admin";
-export const LANDING_DATA_PATH = "data/landing";
 export const WEB_DATA_PATH = "data/web";
 
 //rutas publicas
