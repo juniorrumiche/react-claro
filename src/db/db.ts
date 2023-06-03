@@ -7,6 +7,337 @@ import {
   PlanesNetflixDBType,
 } from "../types/db";
 
+
+export const Planes2Play : Array<PlanesBaseType> = [
+  {
+    nombre_plan: "Plan Claro S/.40",
+    velocidad: 50,
+    duracion_promo: 1,
+    precio_promo: 40,
+    precio_real: 80,
+    mb_standar: 50,
+    mb_fullclaro: 100
+  },
+  {
+    nombre_plan: "Plan Claro S/.45",
+    velocidad: 100,
+    duracion_promo: 1,
+    precio_promo: 45,
+    precio_real: 90,
+    mb_standar: 100,
+    mb_fullclaro: 200
+  },
+  {
+    nombre_plan: "Plan Claro S/.52,50",
+    velocidad: 150,
+    duracion_promo: 1,
+    precio_promo: 52.50,
+    precio_real: 105,
+    mb_standar: 150,
+    mb_fullclaro: 300
+  },
+  {
+    nombre_plan: "Plan Claro S/.60",
+    velocidad: 200,
+    duracion_promo: 1,
+    precio_promo: 60,
+    precio_real: 120,
+    mb_standar: 200,
+    mb_fullclaro: 400
+  },
+  {
+    nombre_plan: "Plan Claro S/.105",
+    velocidad: 300,
+    duracion_promo: 1,
+    precio_promo: 105,
+    precio_real: 210,
+    mb_standar: 300,
+    mb_fullclaro: 600
+  },
+  {
+    nombre_plan: "Plan Claro S/.125",
+    velocidad: 500,
+    duracion_promo: 1,
+    precio_promo: 125,
+    precio_real: 250,
+    mb_standar: 500,
+    mb_fullclaro: 1000
+  },
+  {
+    nombre_plan: "Plan Claro S/.225",
+    velocidad: 1000,
+    duracion_promo: 1,
+    precio_promo: 225,
+    precio_real: 450,
+    mb_standar: 1000,
+    mb_fullclaro: 0
+  }
+]
+
+export const Planes2PlayAvanzado : Array<PlanesBaseType> = [
+  {
+    nombre_plan: "Plan Claro S/.72.50",
+    velocidad: 50,
+    duracion_promo: 3,
+    precio_promo: 72.50,
+    precio_real: 145,
+    mb_standar: 50,
+    mb_fullclaro: 100
+  },
+  {
+    nombre_plan: "Plan Claro S/.77.50",
+    velocidad: 100,
+    duracion_promo: 3,
+    precio_promo: 77.50,
+    precio_real: 155,
+    mb_standar: 100,
+    mb_fullclaro: 200
+  },
+  {
+    nombre_plan: "Plan Claro S/.85",
+    velocidad: 150,
+    duracion_promo: 3,
+    precio_promo: 85,
+    precio_real: 170,
+    mb_standar: 150,
+    mb_fullclaro: 300
+  },
+  {
+    nombre_plan: "Plan Claro S/.92.50",
+    velocidad: 200,
+    duracion_promo: 3,
+    precio_promo: 92.50,
+    precio_real: 185,
+    mb_standar: 200,
+    mb_fullclaro: 400
+  },
+  {
+    nombre_plan: "Plan Claro S/.137.50",
+    velocidad: 300,
+    duracion_promo: 3,
+    precio_promo: 137.50,
+    precio_real: 275,
+    mb_standar: 300,
+    mb_fullclaro: 600
+  },
+  {
+    nombre_plan: "Plan Claro S/.157.50",
+    velocidad: 500,
+    duracion_promo: 3,
+    precio_promo: 157.50,
+    precio_real: 315,
+    mb_standar: 500,
+    mb_fullclaro: 1000
+  },
+  {
+    nombre_plan: "Plan Claro S/.257.50",
+    velocidad: 1000,
+    duracion_promo: 3,
+    precio_promo: 257.50,
+    precio_real: 515,
+    mb_standar: 1000,
+    mb_fullclaro: 0
+  }
+]
+
+export const Planes2PlaySuperior : Array<PlanesBaseType> = [
+  {
+    nombre_plan: "Plan Claro S/.97.50",
+    velocidad: 50,
+    duracion_promo: 3,
+    precio_promo: 97.50,
+    precio_real: 195,
+    mb_standar: 50,
+    mb_fullclaro: 100
+  },
+  {
+    nombre_plan: "Plan Claro S/.102.50",
+    velocidad: 100,
+    duracion_promo: 3,
+    precio_promo: 102.50,
+    precio_real: 205,
+    mb_standar: 100,
+    mb_fullclaro: 200
+  },
+  {
+    nombre_plan: "Plan Claro S/.110",
+    velocidad: 150,
+    duracion_promo: 3,
+    precio_promo: 110,
+    precio_real: 220,
+    mb_standar: 150,
+    mb_fullclaro: 300
+  },
+  {
+    nombre_plan: "Plan Claro S/.117.50",
+    velocidad: 200,
+    duracion_promo: 3,
+    precio_promo: 117.50,
+    precio_real: 235,
+    mb_standar: 200,
+    mb_fullclaro: 400
+  },
+  {
+    nombre_plan: "Plan Claro S/.162.50",
+    velocidad: 300,
+    duracion_promo: 3,
+    precio_promo: 162.50,
+    precio_real: 325,
+    mb_standar: 300,
+    mb_fullclaro: 600
+  },
+  {
+    nombre_plan: "Plan Claro S/.185.50",
+    velocidad: 500,
+    duracion_promo: 3,
+    precio_promo: 185.50,
+    precio_real: 365,
+    mb_standar: 500,
+    mb_fullclaro: 1000
+  },
+  {
+    nombre_plan: "Plan Claro S/.282.50",
+    velocidad: 1000,
+    duracion_promo: 3,
+    precio_promo: 282.50,
+    precio_real: 565,
+    mb_standar: 1000,
+    mb_fullclaro: 0
+  }
+]
+
+export const Planes3PlayAvanzado : Array<PlanesBaseType> = [
+  {
+    nombre_plan: "Plan Claro S/.77.50",
+    velocidad: 50,
+    duracion_promo: 3,
+    precio_promo: 77.50,
+    precio_real: 155,
+    mb_standar: 50,
+    mb_fullclaro: 100
+  },
+  {
+    nombre_plan: "Plan Claro S/.82.50",
+    velocidad: 100,
+    duracion_promo: 3,
+    precio_promo: 82.50,
+    precio_real: 165,
+    mb_standar: 100,
+    mb_fullclaro: 200
+  },
+  {
+    nombre_plan: "Plan Claro S/.90",
+    velocidad: 150,
+    duracion_promo: 3,
+    precio_promo: 90,
+    precio_real: 180,
+    mb_standar: 150,
+    mb_fullclaro: 300
+  },
+  {
+    nombre_plan: "Plan Claro S/.95",
+    velocidad: 200,
+    duracion_promo: 3,
+    precio_promo: 95,
+    precio_real: 190,
+    mb_standar: 200,
+    mb_fullclaro: 400
+  },
+  {
+    nombre_plan: "Plan Claro S/.140",
+    velocidad: 300,
+    duracion_promo: 3,
+    precio_promo: 140,
+    precio_real: 280,
+    mb_standar: 300,
+    mb_fullclaro: 600
+  },
+  {
+    nombre_plan: "Plan Claro S/.160",
+    velocidad: 500,
+    duracion_promo: 3,
+    precio_promo: 160,
+    precio_real: 320,
+    mb_standar: 500,
+    mb_fullclaro: 1000
+  },
+  {
+    nombre_plan: "Plan Claro S/.260",
+    velocidad: 1000,
+    duracion_promo: 3,
+    precio_promo: 260,
+    precio_real: 520,
+    mb_standar: 1000,
+    mb_fullclaro: 0
+  }
+]
+
+export const Planes3PlaySuperior : Array<PlanesBaseType> = [
+  {
+    nombre_plan: "Plan Claro S/.102.50",
+    velocidad: 50,
+    duracion_promo: 3,
+    precio_promo: 102.50,
+    precio_real: 205,
+    mb_standar: 50,
+    mb_fullclaro: 100
+  },
+  {
+    nombre_plan: "Plan Claro S/.107.50",
+    velocidad: 100,
+    duracion_promo: 3,
+    precio_promo: 107.50,
+    precio_real: 215,
+    mb_standar: 100,
+    mb_fullclaro: 200
+  },
+  {
+    nombre_plan: "Plan Claro S/.115",
+    velocidad: 150,
+    duracion_promo: 3,
+    precio_promo: 115,
+    precio_real: 230,
+    mb_standar: 150,
+    mb_fullclaro: 300
+  },
+  {
+    nombre_plan: "Plan Claro S/.120",
+    velocidad: 200,
+    duracion_promo: 3,
+    precio_promo: 120,
+    precio_real: 240,
+    mb_standar: 200,
+    mb_fullclaro: 400
+  },
+  {
+    nombre_plan: "Plan Claro S/.165",
+    velocidad: 300,
+    duracion_promo: 3,
+    precio_promo: 165,
+    precio_real: 330,
+    mb_standar: 300,
+    mb_fullclaro: 600
+  },
+  {
+    nombre_plan: "Plan Claro S/.185",
+    velocidad: 500,
+    duracion_promo: 3,
+    precio_promo: 185,
+    precio_real: 370,
+    mb_standar: 500,
+    mb_fullclaro: 1000
+  },
+  {
+    nombre_plan: "Plan Claro S/.285",
+    velocidad: 1000,
+    duracion_promo: 3,
+    precio_promo: 285,
+    precio_real: 570,
+    mb_standar: 1000,
+    mb_fullclaro: 0
+  }
+]
+
 export const Planes1Play: Array<PlanesBaseType> = [
   {
     nombre_plan: "Plan Claro S/.70",
