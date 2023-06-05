@@ -19,3 +19,11 @@ export interface ContactCardType {
   select_input_items: Array<Planes1PlayDBType>;
   image_url?: string;
 }
+
+export interface PhoneDataProps {
+  URLimg?: string;
+  marca?: string;
+  nombreEquipo?: string;
+  modalidad?: string;
+  pOnline: string;
+}

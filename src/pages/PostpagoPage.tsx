@@ -6,11 +6,10 @@ import {
   Box,
   Button,
   Flex,
-  Grid,
-  GridItem,
   HStack,
   Heading,
   Image,
+  SimpleGrid,
   Stack,
   Text,
   useColorModeValue,
@@ -21,30 +20,33 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { CATALOGO_API_PATH } from "../config/config";
 import { useParams } from "react-router-dom";
+import { PhoneDataProps } from "../types/componente";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
-const PhoneCard = () => {
+const PhoneCard = (props: PhoneDataProps) => {
   return (
     <Flex
       borderRadius="2xl"
+      m={3}
       p={5}
       flexDirection="column"
       bg={useColorModeValue("white", "whiteAlpha.100")}
     >
       <Box textAlign="center" w="full">
         <Heading color="gray" size="md">
-          Motorola
+          {props.marca}
         </Heading>
         <Heading mt={2} size="lg">
-          Moto G23 128GB Gris Oxford
+          {props.nombreEquipo}
         </Heading>
       </Box>
       <HStack mt={3} spacing={1}>
         <Box w="55%" textAlign="center">
-          <Image alt="phone claro" src="/phone.png"></Image>
+          <Image alt="phone claro" src={props.URLimg}></Image>
         </Box>
         <Stack w="40%" spacing={2}>
           <Text fontWeight="bold">Precio Online</Text>
-          <Text fontWeight="bold">S/. 649.00</Text>
+          <Text fontWeight="bold">S/. {props.pOnline}</Text>
           <Text color="gray.500" fontSize={12}>
             Postpago Portabilidad Max ilimitado 69.90
           </Text>
@@ -69,14 +71,14 @@ const PhoneCard = () => {
 };
 
 export const PostpagoPage = () => {
-  const [phoneData, setPhoneData] = useState("");
+  const [phoneData, setPhoneData] = useState<PhoneDataProps[]>([]);
   const { marca } = useParams();
-  console.log(marca);
 
   useEffect(() => {
     const timeout = setTimeout(async () => {
       try {
         let response = await axios.get(CATALOGO_API_PATH + `${marca}`);
+        setPhoneData(response.data);
         console.log(response.data);
       } catch (error) {}
     }, 100);
@@ -91,28 +93,15 @@ export const PostpagoPage = () => {
       </Helmet>
       <Navbar />
       <ContactCard select_input_items={[]} />
-      <Grid
-        py={10}
-        px={5}
-        templateColumns={{
-          base: "repeat(1, 1fr)",
-          sm: "repeat(2, 1fr)",
-          md: "repeat(3, 1fr)",
-        }}
-        gap={6}
-      >
-        <GridItem w="100%">
-          <PhoneCard />
-        </GridItem>
+      <SimpleGrid columns={{ base: 1, md: 3 }} py={10} px={5}>
+        {phoneData &&
+          phoneData.map((value, index) => (
+            <LazyLoadComponent key={index}>
+              <PhoneCard {...value} />
+            </LazyLoadComponent>
+          ))}
+      </SimpleGrid>
 
-        <GridItem w="100%">
-          <PhoneCard />
-        </GridItem>
-
-        <GridItem w="100%">
-          <PhoneCard />
-        </GridItem>
-      </Grid>
       <Footer />
     </main>
   );

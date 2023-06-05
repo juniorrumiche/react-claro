@@ -16,8 +16,7 @@ import { PlanesBaseType } from "../types/db";
 export const CardPlanesPlay = ({
   mb_standar,
   mb_fullclaro,
-  _precio_real,
-  precio_promo
+  precio_promo,
 }: PlanesBaseType) => {
   return (
     <Center py={6}>
@@ -75,7 +74,7 @@ export const CardPlanesPlay = ({
           </List>
 
           <Button
-          leftIcon={<MdWhatsapp size={25}/>}
+            leftIcon={<MdWhatsapp size={25} />}
             mt={10}
             w={"full"}
             bg={"green.400"}
