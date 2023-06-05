@@ -22,3 +22,5 @@ export const PLAY2_AVANZADO_PATH = "/planes/2play-avanzado";
 export const PLAY2_SUPERIOR_PATH = "/planes/2play-superior";
 export const PLAY3_AVANZADO_PATH = "/planes/3play-avanzado";
 export const PLAY3_SUPERIOR_PATH = "/planes/3play-superior";
+
+export const CATALOGO_API_PATH = "/api/v1/catalogo/";

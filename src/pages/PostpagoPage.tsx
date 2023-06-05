@@ -17,6 +17,10 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineFundView } from "react-icons/ai";
 import { Helmet } from "react-helmet";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { CATALOGO_API_PATH } from "../config/config";
+import { useParams } from "react-router-dom";
 
 const PhoneCard = () => {
   return (
@@ -65,6 +69,21 @@ const PhoneCard = () => {
 };
 
 export const PostpagoPage = () => {
+  const [phoneData, setPhoneData] = useState("");
+  const { marca } = useParams();
+  console.log(marca);
+
+  useEffect(() => {
+    const timeout = setTimeout(async () => {
+      try {
+        let response = await axios.get(CATALOGO_API_PATH + `${marca}`);
+        console.log(response.data);
+      } catch (error) {}
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <main>
       <Helmet>
