@@ -8,7 +8,7 @@ import {
 } from "../types/db";
 
 
-export const Planes2Play : Array<PlanesBaseType> = [
+export const Planes2PlayDB : Array<PlanesBaseType> = [
   {
     nombre_plan: "Plan Claro S/.40",
     velocidad: 50,

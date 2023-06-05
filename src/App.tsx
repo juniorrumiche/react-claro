@@ -9,6 +9,11 @@ import {
   MOVILES_LISTA_PATH,
   PLANES_NETFLIX_PATH,
   PLAY1_PATH,
+  PLAY2_AVANZADO_PATH,
+  PLAY2_PATH,
+  PLAY2_SUPERIOR_PATH,
+  PLAY3_AVANZADO_PATH,
+  PLAY3_SUPERIOR_PATH,
   POSTPAGO_CLARO_PATH,
   PROMOCIONES_PATH,
   WEB_DATA_PATH,
@@ -23,6 +28,11 @@ import { PostpagoPage } from "./pages/PostpagoPage";
 import { PromocionesClaroPage } from "./pages/PromocionesClaroPage";
 import { Play1Page } from "./pages/Play1Page";
 import { DatosClientePage } from "./pages/admin/DatosClientesPage";
+import { Play2Page } from "./pages/Play2Page";
+import { Play2AdvancePage } from "./pages/Play2AdvancePage";
+import { Play2SuperPage } from "./pages/Play2SuperPage";
+import { Play3AdvancePage } from "./pages/Play3Advance";
+import { Play3SuperPage } from "./pages/Play3SuperPage";
 
 function App() {
   return (
@@ -32,6 +42,11 @@ function App() {
           <Route>
             <Route path="/" element={<PublicRoutes />}>
               <Route path={HOME_PATH} element={<HomePage />} />
+              <Route path={PLAY2_PATH} element={<Play2Page />} />
+              <Route path={PLAY2_AVANZADO_PATH} element={<Play2AdvancePage/>} />
+              <Route path={PLAY2_SUPERIOR_PATH} element={<Play2SuperPage />} />
+              <Route path={PLAY3_AVANZADO_PATH} element={<Play3AdvancePage />} />
+              <Route path={PLAY3_SUPERIOR_PATH} element={<Play3SuperPage />} />
               <Route path={LOGIN_PATH} element={<LoginPage />} />
               <Route path={FULL_CLARO_PATH} element={<FullClaroPage />} />
               <Route path={POSTPAGO_CLARO_PATH} element={<PostpagoPage />} />

@@ -10,13 +10,14 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
-import { MdOutlineSpeed } from "react-icons/md";
+import { MdOutlineSpeed, MdWhatsapp } from "react-icons/md";
 import { PlanesBaseType } from "../types/db";
 
 export const CardPlanesPlay = ({
   mb_standar,
   mb_fullclaro,
-  precio_real,
+  _precio_real,
+  precio_promo
 }: PlanesBaseType) => {
   return (
     <Center py={6}>
@@ -41,7 +42,7 @@ export const CardPlanesPlay = ({
           <Stack direction={"row"} align={"center"} justify={"center"}>
             <Text fontSize={"3xl"}>S./</Text>
             <Text fontSize={"4xl"} fontWeight={800}>
-              {precio_real.toFixed(2)}
+              {precio_promo.toFixed(2)}
             </Text>
             <Text color={"gray.500"}>/mes</Text>
           </Stack>
@@ -74,6 +75,7 @@ export const CardPlanesPlay = ({
           </List>
 
           <Button
+          leftIcon={<MdWhatsapp size={25}/>}
             mt={10}
             w={"full"}
             bg={"green.400"}
@@ -86,7 +88,7 @@ export const CardPlanesPlay = ({
               bg: "green.500",
             }}
           >
-            Start your trial
+            Mas Información
           </Button>
         </Box>
       </Box>
