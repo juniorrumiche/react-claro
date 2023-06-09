@@ -28,7 +28,11 @@ export const Play1Page = () => {
         <LazyLoadComponent>
           <SimpleGrid py={10} columns={{ base: 1, md: 3 }} gap={8}>
             {Planes1Play.map((plan, index) => (
-              <CardPlanesPlay key={index} {...plan} />
+              <CardPlanesPlay
+                key={index}
+                {...plan}
+                precio_promo={plan.precio_real}
+              />
             ))}
           </SimpleGrid>
         </LazyLoadComponent>
