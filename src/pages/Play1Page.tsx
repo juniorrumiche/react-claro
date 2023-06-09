@@ -20,7 +20,9 @@ export const Play1Page = () => {
         <Box py={5}>
           <VStack>
             <MdWifi size={90} />
-            <Heading>Elige el paquete de Internet ideal para tu hogar</Heading>
+            <Heading textAlign="center">
+              Elige el paquete de Internet ideal para tu hogar
+            </Heading>
           </VStack>
         </Box>
         <LazyLoadComponent>

@@ -1,7 +1,14 @@
-import { Box, Container, HStack, Heading, SimpleGrid, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  HStack,
+  Heading,
+  SimpleGrid,
+  VStack,
+} from "@chakra-ui/react";
 import { ContactCard } from "../components/ContactCard";
 import { Navbar } from "../components/base/Navbar";
-import {  Planes1PlayDB, Planes2PlayDB } from "../db/db";
+import { Planes1PlayDB, Planes2PlayDB } from "../db/db";
 import { CardPlanesPlay } from "../components/CardPlanesPlay";
 import { MdOutlinePhone, MdWifi } from "react-icons/md";
 import { Footer } from "../components/base/Footer";
@@ -20,12 +27,14 @@ export const Play2Page = () => {
       <Container maxWidth="6xl" py={10}>
         <Box py={5}>
           <VStack>
-                <HStack gap={5}>
-                    <MdWifi size={90} />
-                    <FaPlus size={30} />
-                    <MdOutlinePhone size={80}/>
-                </HStack>
-            <Heading>Elige el paquete de Internet ideal para tu hogar</Heading>
+            <HStack gap={5}>
+              <MdWifi size={80} />
+              <FaPlus size={25} />
+              <MdOutlinePhone size={75} />
+            </HStack>
+            <Heading textAlign="center">
+              Elige el paquete de Internet ideal para tu hogar
+            </Heading>
           </VStack>
         </Box>
         <LazyLoadComponent>

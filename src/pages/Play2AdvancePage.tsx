@@ -28,11 +28,13 @@ export const Play2AdvancePage = () => {
         <Box py={5}>
           <VStack>
             <HStack gap={5}>
-              <MdWifi size={90} />
-              <FaPlus size={30} />
-              <MdOutlineTv size={80} />
+              <MdWifi size={80} />
+              <FaPlus size={25} />
+              <MdOutlineTv size={75} />
             </HStack>
-            <Heading>Elige el paquete de Internet ideal para tu hogar</Heading>
+            <Heading textAlign="center">
+              Elige el paquete de Internet ideal para tu hogar
+            </Heading>
           </VStack>
         </Box>
         <LazyLoadComponent>

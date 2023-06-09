@@ -87,17 +87,16 @@ export const PostpagoPage = () => {
 
   //useEffect
   useEffect(() => {
+    setLoading(true);
     const timeout = setTimeout(async () => {
-      setLoading(true);
       try {
         let response = await axios.get(CATALOGO_API_PATH + `${marca}`);
         setPhoneData(response.data);
-        console.log(response.data);
         setLoading(false);
       } catch (error) {
         setLoading(false);
       }
-    }, 100);
+    }, 1000);
 
     return () => clearTimeout(timeout);
   }, [marca]);
@@ -122,7 +121,7 @@ export const PostpagoPage = () => {
         >
           <Stack py={5} px={4} spacing={5}>
             <Heading size="md">Marcas</Heading>
-            <RadioGroup onChange={handleMarcaChange}>
+            <RadioGroup onChange={handleMarcaChange} defaultValue={marca}>
               <Stack spacing={5}>
                 {MarcasTelefonoDB.map((value, index) => (
                   <HStack justifyContent="space-between" key={index}>
@@ -141,7 +140,7 @@ export const PostpagoPage = () => {
         </Box>
         {loading ? (
           <Center w="full">
-            <Spinner />{" "}
+            <Spinner />
           </Center>
         ) : (
           <SimpleGrid columns={{ base: 1, md: 3 }} py={10} px={5}>

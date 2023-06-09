@@ -49,7 +49,6 @@ function App() {
               <Route path={PLAY3_SUPERIOR_PATH} element={<Play3SuperPage />} />
               <Route path={LOGIN_PATH} element={<LoginPage />} />
               <Route path={FULL_CLARO_PATH} element={<FullClaroPage />} />
-              <Route path={POSTPAGO_CLARO_PATH} element={<PostpagoPage />} />
               <Route path={PLAY1_PATH} element={<Play1Page />} />
               <Route
                 path={MOVILES_LISTA_PATH + "/:marca"}

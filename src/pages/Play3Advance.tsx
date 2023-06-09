@@ -1,7 +1,15 @@
-import { Box, Container, Heading, SimpleGrid, VStack, HStack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Heading,
+  SimpleGrid,
+  VStack,
+  HStack,
+  Icon,
+} from "@chakra-ui/react";
 import { ContactCard } from "../components/ContactCard";
 import { Navbar } from "../components/base/Navbar";
-import {  Planes1PlayDB, Planes3PlayAvanzado } from "../db/db";
+import { Planes1PlayDB, Planes3PlayAvanzado } from "../db/db";
 import { CardPlanesPlay } from "../components/CardPlanesPlay";
 import { MdOutlinePhone, MdOutlineTv, MdWifi } from "react-icons/md";
 
@@ -21,14 +29,16 @@ export const Play3AdvancePage = () => {
       <Container maxWidth="6xl" py={10}>
         <Box py={5}>
           <VStack>
-          <HStack>
-                <MdWifi size={90} />
-                <FaPlus size={50} />
-                <MdOutlineTv size={90} />
-                <FaPlus size={50} />
-                <MdOutlinePhone size={90}/>
+            <HStack gap={5}>
+              <Icon as={MdWifi} boxSize={{ base: 10, md: 90 }} />
+              <Icon as={FaPlus} boxSize={{ base: 5, md: 25 }} />
+              <Icon as={MdOutlineTv} boxSize={{ base: 10, md: 90 }} />
+              <Icon as={FaPlus} boxSize={{ base: 5, md: 25 }} />
+              <Icon as={MdOutlineTv} boxSize={{ base: 10, md: 90 }} />
             </HStack>
-            <Heading>Elige el paquete de Internet ideal para tu hogar</Heading>
+            <Heading textAlign="center">
+              Elige el paquete de Internet ideal para tu hogar
+            </Heading>
           </VStack>
         </Box>
         <LazyLoadComponent>
