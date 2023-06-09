@@ -5,11 +5,15 @@ import {
   Badge,
   Box,
   Button,
+  Center,
   Flex,
   HStack,
   Heading,
   Image,
+  Radio,
+  RadioGroup,
   SimpleGrid,
+  Spinner,
   Stack,
   Text,
   useColorModeValue,
@@ -19,9 +23,10 @@ import { Helmet } from "react-helmet";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { CATALOGO_API_PATH } from "../config/config";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { PhoneDataProps } from "../types/componente";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
+import { MarcasTelefonoDB } from "../db/db";
 
 const PhoneCard = (props: PhoneDataProps) => {
   return (
@@ -72,19 +77,32 @@ const PhoneCard = (props: PhoneDataProps) => {
 
 export const PostpagoPage = () => {
   const [phoneData, setPhoneData] = useState<PhoneDataProps[]>([]);
+  const [loading, setLoading] = useState(true);
   const { marca } = useParams();
+  const navigate = useNavigate();
 
+  const handleMarcaChange = (newMarca: string) => {
+    navigate(`/moviles/${newMarca}`);
+  };
+
+  //useEffect
   useEffect(() => {
     const timeout = setTimeout(async () => {
+      setLoading(true);
       try {
         let response = await axios.get(CATALOGO_API_PATH + `${marca}`);
         setPhoneData(response.data);
         console.log(response.data);
-      } catch (error) {}
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+      }
     }, 100);
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [marca]);
+
+  //End useEffect
 
   return (
     <main>
@@ -93,14 +111,49 @@ export const PostpagoPage = () => {
       </Helmet>
       <Navbar />
       <ContactCard select_input_items={[]} />
-      <SimpleGrid columns={{ base: 1, md: 3 }} py={10} px={5}>
-        {phoneData &&
-          phoneData.map((value, index) => (
-            <LazyLoadComponent key={index}>
-              <PhoneCard {...value} />
-            </LazyLoadComponent>
-          ))}
-      </SimpleGrid>
+
+      <Flex direction={{ base: "column", md: "row" }}>
+        <Box
+          mx={2}
+          my={5}
+          minWidth={250}
+          borderRadius="2xl"
+          bg={useColorModeValue("white", "whiteAlpha.100")}
+        >
+          <Stack py={5} px={4} spacing={5}>
+            <Heading size="md">Marcas</Heading>
+            <RadioGroup onChange={handleMarcaChange}>
+              <Stack spacing={5}>
+                {MarcasTelefonoDB.map((value, index) => (
+                  <HStack justifyContent="space-between" key={index}>
+                    <div>{value.name.toLowerCase()}</div>
+                    <Radio
+                      size="lg"
+                      name="1"
+                      colorScheme="blue"
+                      value={value.name.toLowerCase()}
+                    />
+                  </HStack>
+                ))}
+              </Stack>
+            </RadioGroup>
+          </Stack>
+        </Box>
+        {loading ? (
+          <Center w="full">
+            <Spinner />{" "}
+          </Center>
+        ) : (
+          <SimpleGrid columns={{ base: 1, md: 3 }} py={10} px={5}>
+            {phoneData &&
+              phoneData.map((value, index) => (
+                <LazyLoadComponent key={index}>
+                  <PhoneCard {...value} />
+                </LazyLoadComponent>
+              ))}
+          </SimpleGrid>
+        )}
+      </Flex>
 
       <Footer />
     </main>
