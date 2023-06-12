@@ -32,6 +32,7 @@ export const Play1Page = () => {
                 key={index}
                 {...plan}
                 precio_promo={plan.precio_real}
+                precio_real={0}
               />
             ))}
           </SimpleGrid>

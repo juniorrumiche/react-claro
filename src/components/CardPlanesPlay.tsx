@@ -17,6 +17,8 @@ export const CardPlanesPlay = ({
   mb_standar,
   mb_fullclaro,
   precio_promo,
+  precio_real,
+  duracion_promo
 }: PlanesBaseType) => {
   return (
     <Center py={6}>
@@ -38,14 +40,22 @@ export const CardPlanesPlay = ({
             <MdOutlineSpeed size={90} />
             {mb_standar} Mbps
           </Text>
-          <Stack direction={"row"} align={"center"} justify={"center"}>
-            <Text fontSize={"3xl"}>S./</Text>
-            <Text fontSize={"4xl"} fontWeight={800}>
-              {precio_promo.toFixed(2)}
-            </Text>
-            <Text color={"gray.500"}>/mes</Text>
-          </Stack>
+          
+       
+              <Stack direction={"row"} align={"center"} justify={"center"}>
+              <Text fontSize={"3xl"}>S./</Text>
+              <Text fontSize={"4xl"} fontWeight={800}>
+                {precio_promo.toFixed(2)}
+              </Text>
+              <Text color={"gray.500"}>x {duracion_promo == 1 ? <text>1 mes</text>:<text>3 meses</text>}</Text>
+            </Stack>
+
+
+
+
+          { precio_real != 0  && precio_promo !=0 ? <Text color={useColorModeValue('gray.500', 'gray.400')} fontSize='x'><b>El precio real es S/. {precio_real} por mes</b></Text>: null }
           <Text color="gray.500">Tu contrato renueva cada mes</Text>
+
         </Stack>
 
         <Box bg={useColorModeValue("white", "gray.800")} px={6} py={5}>
@@ -63,10 +73,17 @@ export const CardPlanesPlay = ({
               <ListIcon as={CheckIcon} color="green.400" />
               Series y peliculas en HD
             </ListItem>
-            <ListItem>
-              <ListIcon as={CheckIcon} color="green.400" />
-              <b>{mb_fullclaro}Mbps</b> Full Claro
-            </ListItem>
+            {
+              mb_fullclaro != 0 ? (
+                <ListItem>
+                <ListIcon as={CheckIcon} color="green.400" />
+                
+                <b>{mb_fullclaro}Mbps</b> Full Claro
+              </ListItem>
+              ): null
+
+            }
+
             <ListItem>
               <ListIcon as={CheckIcon} color="green.400" />
               100 min a Operador Nacional

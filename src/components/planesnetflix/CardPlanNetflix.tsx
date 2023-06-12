@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import { CardPlanNetFlixType } from "../../types/componente";
-import { MdOutlineSpeed } from "react-icons/md";
+import { MdOutlineSpeed, MdWhatsapp } from "react-icons/md";
 
 export const CardPlanNetflix = ({
   mb_standar,
@@ -19,6 +19,7 @@ export const CardPlanNetflix = ({
   modalidad,
   numero_pantallas,
   mb_fullclaro,
+  nombre_plan
 }: CardPlanNetFlixType) => {
   return (
     <Center py={6}>
@@ -69,7 +70,10 @@ export const CardPlanNetflix = ({
             </ListItem>
           </List>
 
-          <Button
+         <a
+        href={`https://api.whatsapp.com/send/?phone=51902430825&text=${"😃¡Hola Fernanda! estoy interesado en *PLAN"}}: ${nombre_plan}* 📲 Por favor mas información. Gracias.`} target="_blank">
+         <Button
+            leftIcon={<MdWhatsapp size={25} />}
             mt={10}
             w={"full"}
             bg={"green.400"}
@@ -82,8 +86,9 @@ export const CardPlanNetflix = ({
               bg: "green.500",
             }}
           >
-            Start your trial
+            Mas Información
           </Button>
+         </a>
         </Box>
       </Box>
     </Center>
