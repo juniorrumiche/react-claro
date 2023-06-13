@@ -21,6 +21,7 @@ export interface ContactCardType {
 }
 
 export interface PhoneDataProps {
+  onOpen: any;
   URLimg?: string;
   marca?: string;
   nombreEquipo?: string;

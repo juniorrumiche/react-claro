@@ -1,11 +1,14 @@
-import { Box, Flex, Heading, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  SimpleGrid,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import Slider from "react-slick";
 import { MarcaSliderItemType } from "../../types/componente";
 import { MarcasTelefonoDB } from "../../db/db";
-import { Link as LinkRoute } from "react-router-dom";
-import { MOVILES_LISTA_PATH } from "../../config/config";
 
 const MarcaSliderItem = ({ name, image_url }: MarcaSliderItemType) => {
   return (
@@ -13,8 +16,7 @@ const MarcaSliderItem = ({ name, image_url }: MarcaSliderItemType) => {
       <Flex
         borderWidth={1}
         borderColor="transparent"
-        py={10}
-        px={10}
+        p={5}
         minHeight={310}
         transition="all"
         transitionDuration=".5s"
@@ -28,7 +30,10 @@ const MarcaSliderItem = ({ name, image_url }: MarcaSliderItemType) => {
           borderColor: useColorModeValue("gray.300", "whiteAlpha.400"),
         }}
       >
-        <LinkRoute to={MOVILES_LISTA_PATH + "/" + name?.toLowerCase()}>
+        <a
+          target="_blank"
+          href={`https://api.whatsapp.com/send/?phone=51902430825&text=${"😃¡Hola Fernanda! estoy interesado en adquirir un "}${name} en plan postpago .Por favor mas información. Gracias.`}
+        >
           <LazyLoadImage
             loading="lazy"
             src={
@@ -40,33 +45,18 @@ const MarcaSliderItem = ({ name, image_url }: MarcaSliderItemType) => {
           <Heading mt={2} fontWeight="semibold" size="md" textAlign="center">
             {name}
           </Heading>
-        </LinkRoute>
+        </a>
       </Flex>
     </Box>
   );
 };
 
 export const MarcaSlider = () => {
-  const settings = {
-    swipe: true,
-    slidesToShow: 4,
-    autoplay: true,
-    infinite: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
   return (
-    <Slider dots={true} arrows={false} {...settings}>
-      {MarcasTelefonoDB.map((marca, index) => (
-        <MarcaSliderItem key={index} {...marca} />
+    <SimpleGrid columns={{ base: 1, md: 3, lg: 5 }} px={5} py={10}>
+      {MarcasTelefonoDB.map((value, index) => (
+        <MarcaSliderItem key={index} {...value} />
       ))}
-    </Slider>
+    </SimpleGrid>
   );
 };

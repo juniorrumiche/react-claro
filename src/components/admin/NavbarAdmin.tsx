@@ -28,7 +28,7 @@ const Links = [
   { name: "Datos", path: WEB_DATA_PATH },
   { name: "Usuarios", path: "/admin" },
   { name: "Planes", path: "/admin" },
-  { name: "Equipos", path: "/admin" },
+  { name: "Equipos", path: "/admin/equipos" },
 ];
 
 interface NavLinkTypes {

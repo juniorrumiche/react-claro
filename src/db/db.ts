@@ -7,7 +7,7 @@ import {
   PlanesNetflixDBType,
 } from "../types/db";
 
-export const Planes2PlayDB : Array<PlanesBaseType> = [
+export const Planes2PlayDB: Array<PlanesBaseType> = [
   {
     nombre_plan: "Plan Claro S/.40",
     velocidad: 50,
@@ -15,7 +15,7 @@ export const Planes2PlayDB : Array<PlanesBaseType> = [
     precio_promo: 40,
     precio_real: 80,
     mb_standar: 50,
-    mb_fullclaro: 100
+    mb_fullclaro: 100,
   },
   {
     nombre_plan: "Plan Claro S/.45",
@@ -24,16 +24,16 @@ export const Planes2PlayDB : Array<PlanesBaseType> = [
     precio_promo: 45,
     precio_real: 90,
     mb_standar: 100,
-    mb_fullclaro: 200
+    mb_fullclaro: 200,
   },
   {
     nombre_plan: "Plan Claro S/.52,50",
     velocidad: 150,
     duracion_promo: 1,
-    precio_promo: 52.50,
+    precio_promo: 52.5,
     precio_real: 105,
     mb_standar: 150,
-    mb_fullclaro: 300
+    mb_fullclaro: 300,
   },
   {
     nombre_plan: "Plan Claro S/.60",
@@ -42,7 +42,7 @@ export const Planes2PlayDB : Array<PlanesBaseType> = [
     precio_promo: 60,
     precio_real: 120,
     mb_standar: 200,
-    mb_fullclaro: 400
+    mb_fullclaro: 400,
   },
   {
     nombre_plan: "Plan Claro S/.105",
@@ -51,7 +51,7 @@ export const Planes2PlayDB : Array<PlanesBaseType> = [
     precio_promo: 105,
     precio_real: 210,
     mb_standar: 300,
-    mb_fullclaro: 600
+    mb_fullclaro: 600,
   },
   {
     nombre_plan: "Plan Claro S/.125",
@@ -60,7 +60,7 @@ export const Planes2PlayDB : Array<PlanesBaseType> = [
     precio_promo: 125,
     precio_real: 250,
     mb_standar: 500,
-    mb_fullclaro: 1000
+    mb_fullclaro: 1000,
   },
   {
     nombre_plan: "Plan Claro S/.225",
@@ -69,28 +69,28 @@ export const Planes2PlayDB : Array<PlanesBaseType> = [
     precio_promo: 225,
     precio_real: 450,
     mb_standar: 1000,
-    mb_fullclaro: 0
-  }
-]
+    mb_fullclaro: 0,
+  },
+];
 
-export const Planes2PlayAvanzado : Array<PlanesBaseType> = [
+export const Planes2PlayAvanzado: Array<PlanesBaseType> = [
   {
     nombre_plan: "Plan Claro S/.72.50",
     velocidad: 50,
     duracion_promo: 3,
-    precio_promo: 72.50,
+    precio_promo: 72.5,
     precio_real: 145,
     mb_standar: 50,
-    mb_fullclaro: 100
+    mb_fullclaro: 100,
   },
   {
     nombre_plan: "Plan Claro S/.77.50",
     velocidad: 100,
     duracion_promo: 3,
-    precio_promo: 77.50,
+    precio_promo: 77.5,
     precio_real: 155,
     mb_standar: 100,
-    mb_fullclaro: 200
+    mb_fullclaro: 200,
   },
   {
     nombre_plan: "Plan Claro S/.85",
@@ -99,64 +99,64 @@ export const Planes2PlayAvanzado : Array<PlanesBaseType> = [
     precio_promo: 85,
     precio_real: 170,
     mb_standar: 150,
-    mb_fullclaro: 300
+    mb_fullclaro: 300,
   },
   {
     nombre_plan: "Plan Claro S/.92.50",
     velocidad: 200,
     duracion_promo: 3,
-    precio_promo: 92.50,
+    precio_promo: 92.5,
     precio_real: 185,
     mb_standar: 200,
-    mb_fullclaro: 400
+    mb_fullclaro: 400,
   },
   {
     nombre_plan: "Plan Claro S/.137.50",
     velocidad: 300,
     duracion_promo: 3,
-    precio_promo: 137.50,
+    precio_promo: 137.5,
     precio_real: 275,
     mb_standar: 300,
-    mb_fullclaro: 600
+    mb_fullclaro: 600,
   },
   {
     nombre_plan: "Plan Claro S/.157.50",
     velocidad: 500,
     duracion_promo: 3,
-    precio_promo: 157.50,
+    precio_promo: 157.5,
     precio_real: 315,
     mb_standar: 500,
-    mb_fullclaro: 1000
+    mb_fullclaro: 1000,
   },
   {
     nombre_plan: "Plan Claro S/.257.50",
     velocidad: 1000,
     duracion_promo: 3,
-    precio_promo: 257.50,
+    precio_promo: 257.5,
     precio_real: 515,
     mb_standar: 1000,
-    mb_fullclaro: 0
-  }
-]
+    mb_fullclaro: 0,
+  },
+];
 
-export const Planes2PlaySuperior : Array<PlanesBaseType> = [
+export const Planes2PlaySuperior: Array<PlanesBaseType> = [
   {
     nombre_plan: "Plan Claro S/.97.50",
     velocidad: 50,
     duracion_promo: 3,
-    precio_promo: 97.50,
+    precio_promo: 97.5,
     precio_real: 195,
     mb_standar: 50,
-    mb_fullclaro: 100
+    mb_fullclaro: 100,
   },
   {
     nombre_plan: "Plan Claro S/.102.50",
     velocidad: 100,
     duracion_promo: 3,
-    precio_promo: 102.50,
+    precio_promo: 102.5,
     precio_real: 205,
     mb_standar: 100,
-    mb_fullclaro: 200
+    mb_fullclaro: 200,
   },
   {
     nombre_plan: "Plan Claro S/.110",
@@ -165,64 +165,64 @@ export const Planes2PlaySuperior : Array<PlanesBaseType> = [
     precio_promo: 110,
     precio_real: 220,
     mb_standar: 150,
-    mb_fullclaro: 300
+    mb_fullclaro: 300,
   },
   {
     nombre_plan: "Plan Claro S/.117.50",
     velocidad: 200,
     duracion_promo: 3,
-    precio_promo: 117.50,
+    precio_promo: 117.5,
     precio_real: 235,
     mb_standar: 200,
-    mb_fullclaro: 400
+    mb_fullclaro: 400,
   },
   {
     nombre_plan: "Plan Claro S/.162.50",
     velocidad: 300,
     duracion_promo: 3,
-    precio_promo: 162.50,
+    precio_promo: 162.5,
     precio_real: 325,
     mb_standar: 300,
-    mb_fullclaro: 600
+    mb_fullclaro: 600,
   },
   {
     nombre_plan: "Plan Claro S/.185.50",
     velocidad: 500,
     duracion_promo: 3,
-    precio_promo: 185.50,
+    precio_promo: 185.5,
     precio_real: 365,
     mb_standar: 500,
-    mb_fullclaro: 1000
+    mb_fullclaro: 1000,
   },
   {
     nombre_plan: "Plan Claro S/.282.50",
     velocidad: 1000,
     duracion_promo: 3,
-    precio_promo: 282.50,
+    precio_promo: 282.5,
     precio_real: 565,
     mb_standar: 1000,
-    mb_fullclaro: 0
-  }
-]
+    mb_fullclaro: 0,
+  },
+];
 
-export const Planes3PlayAvanzado : Array<PlanesBaseType> = [
+export const Planes3PlayAvanzado: Array<PlanesBaseType> = [
   {
     nombre_plan: "Plan Claro S/.77.50",
     velocidad: 50,
     duracion_promo: 3,
-    precio_promo: 77.50,
+    precio_promo: 77.5,
     precio_real: 155,
     mb_standar: 50,
-    mb_fullclaro: 100
+    mb_fullclaro: 100,
   },
   {
     nombre_plan: "Plan Claro S/.82.50",
     velocidad: 100,
     duracion_promo: 3,
-    precio_promo: 82.50,
+    precio_promo: 82.5,
     precio_real: 165,
     mb_standar: 100,
-    mb_fullclaro: 200
+    mb_fullclaro: 200,
   },
   {
     nombre_plan: "Plan Claro S/.90",
@@ -231,7 +231,7 @@ export const Planes3PlayAvanzado : Array<PlanesBaseType> = [
     precio_promo: 90,
     precio_real: 180,
     mb_standar: 150,
-    mb_fullclaro: 300
+    mb_fullclaro: 300,
   },
   {
     nombre_plan: "Plan Claro S/.95",
@@ -240,7 +240,7 @@ export const Planes3PlayAvanzado : Array<PlanesBaseType> = [
     precio_promo: 95,
     precio_real: 190,
     mb_standar: 200,
-    mb_fullclaro: 400
+    mb_fullclaro: 400,
   },
   {
     nombre_plan: "Plan Claro S/.140",
@@ -249,7 +249,7 @@ export const Planes3PlayAvanzado : Array<PlanesBaseType> = [
     precio_promo: 140,
     precio_real: 280,
     mb_standar: 300,
-    mb_fullclaro: 600
+    mb_fullclaro: 600,
   },
   {
     nombre_plan: "Plan Claro S/.160",
@@ -258,7 +258,7 @@ export const Planes3PlayAvanzado : Array<PlanesBaseType> = [
     precio_promo: 160,
     precio_real: 320,
     mb_standar: 500,
-    mb_fullclaro: 1000
+    mb_fullclaro: 1000,
   },
   {
     nombre_plan: "Plan Claro S/.260",
@@ -267,28 +267,28 @@ export const Planes3PlayAvanzado : Array<PlanesBaseType> = [
     precio_promo: 260,
     precio_real: 520,
     mb_standar: 1000,
-    mb_fullclaro: 0
-  }
-]
+    mb_fullclaro: 0,
+  },
+];
 
-export const Planes3PlaySuperior : Array<PlanesBaseType> = [
+export const Planes3PlaySuperior: Array<PlanesBaseType> = [
   {
     nombre_plan: "Plan Claro S/.102.50",
     velocidad: 50,
     duracion_promo: 3,
-    precio_promo: 102.50,
+    precio_promo: 102.5,
     precio_real: 205,
     mb_standar: 50,
-    mb_fullclaro: 100
+    mb_fullclaro: 100,
   },
   {
     nombre_plan: "Plan Claro S/.107.50",
     velocidad: 100,
     duracion_promo: 3,
-    precio_promo: 107.50,
+    precio_promo: 107.5,
     precio_real: 215,
     mb_standar: 100,
-    mb_fullclaro: 200
+    mb_fullclaro: 200,
   },
   {
     nombre_plan: "Plan Claro S/.115",
@@ -297,7 +297,7 @@ export const Planes3PlaySuperior : Array<PlanesBaseType> = [
     precio_promo: 115,
     precio_real: 230,
     mb_standar: 150,
-    mb_fullclaro: 300
+    mb_fullclaro: 300,
   },
   {
     nombre_plan: "Plan Claro S/.120",
@@ -306,7 +306,7 @@ export const Planes3PlaySuperior : Array<PlanesBaseType> = [
     precio_promo: 120,
     precio_real: 240,
     mb_standar: 200,
-    mb_fullclaro: 400
+    mb_fullclaro: 400,
   },
   {
     nombre_plan: "Plan Claro S/.165",
@@ -315,7 +315,7 @@ export const Planes3PlaySuperior : Array<PlanesBaseType> = [
     precio_promo: 165,
     precio_real: 330,
     mb_standar: 300,
-    mb_fullclaro: 600
+    mb_fullclaro: 600,
   },
   {
     nombre_plan: "Plan Claro S/.185",
@@ -324,7 +324,7 @@ export const Planes3PlaySuperior : Array<PlanesBaseType> = [
     precio_promo: 185,
     precio_real: 370,
     mb_standar: 500,
-    mb_fullclaro: 1000
+    mb_fullclaro: 1000,
   },
   {
     nombre_plan: "Plan Claro S/.285",
@@ -333,9 +333,9 @@ export const Planes3PlaySuperior : Array<PlanesBaseType> = [
     precio_promo: 285,
     precio_real: 570,
     mb_standar: 1000,
-    mb_fullclaro: 0
-  }
-]
+    mb_fullclaro: 0,
+  },
+];
 
 export const Planes1Play: Array<PlanesBaseType> = [
   {
@@ -418,7 +418,7 @@ export const MarcasTelefonoDB: Array<MarcasTelefonoType> = [
   {
     name: "HONOR",
     image_url:
-      "https://claroperupoc.vtexassets.com/arquivos/ids/702348/honor-x7a-silver.png",
+      "https://www.hihonor.com/content/dam/honor/common/product-list/product-series/honor-magic-vs/honor-magic-vs-black.png",
   },
   {
     name: "HUAWEI",
@@ -435,35 +435,35 @@ export const MarcasTelefonoDB: Array<MarcasTelefonoType> = [
   {
     name: "OPPO",
     image_url:
-      "https://claroperupoc.vtexassets.com/arquivos/ids/843775/oppo-reno-7-uno.png",
+      "https://media.croma.com/image/upload/v1662436010/Croma%20Assets/Communication/Mobiles/Images/247198_5_zn9mri.png",
   },
 
   {
     name: "SAMSUNG",
     image_url:
-      "https://claroperupoc.vtexassets.com/arquivos/ids/947532/tira-retira--6-.png",
+      "https://www.datocms-assets.com/88735/1674691302-samsung-galaxy-s21-plus-500x500b.png",
   },
   {
     name: "ETC",
-    image_url: "https://claroperupoc.vtexassets.com/arquivos/ids/250532/3.png",
+    image_url: "https://images.samsung.com/is/image/samsung/p6pim/ie/2302/gallery/ie-galaxy-s23-s916-sm-s916bligeub-thumb-535049031?$GNB_CARD_FULL_M_PNG_PNG$",
   },
 
   {
     name: "VIVO",
     image_url:
-      "https://claroperupoc.vtexassets.com/arquivos/ids/250470/V21_Color.png",
+      "https://in-exstatic-vivofs.vivo.com/gdHFRinHEMrj3yPG/1650440283152/f3a503ac50d6ab45b27bf96f926b18c8.png",
   },
 
   {
     name: "XIAOMI",
     image_url:
-      "https://claroperupoc.vtexassets.com/arquivos/ids/292774/Redmi-9A-front.png",
+      "https://www.freepnglogos.com/uploads/xiaomi-png/test-xiaomi-notre-avis-complet-smartphones-27.png",
   },
 
   {
     name: "ZTE",
     image_url:
-      "https://claroperupoc.vtexassets.com/arquivos/ids/1025727/V40-design-negro.png",
+      "https://cdn.shopify.com/s/files/1/0600/8494/5049/products/zte-blade-a7p-front-back-view.png",
   },
 ];
 

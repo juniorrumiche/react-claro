@@ -18,10 +18,12 @@ export const AuthContext = createContext<AuthContextData>({
   sleep: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
 });
 
+// use auth hook
 export const useAuth = () => {
   return useContext(AuthContext);
 };
 
+//provider
 export const AuthProvider = ({ children }: AuthProviderType) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const toast = useToast();

@@ -14,7 +14,6 @@ import {
   PLAY2_SUPERIOR_PATH,
   PLAY3_AVANZADO_PATH,
   PLAY3_SUPERIOR_PATH,
-  POSTPAGO_CLARO_PATH,
   PROMOCIONES_PATH,
   WEB_DATA_PATH,
 } from "./config/config";
@@ -33,6 +32,7 @@ import { Play2AdvancePage } from "./pages/Play2AdvancePage";
 import { Play2SuperPage } from "./pages/Play2SuperPage";
 import { Play3AdvancePage } from "./pages/Play3Advance";
 import { Play3SuperPage } from "./pages/Play3SuperPage";
+import { DashboardEquiposPage } from "./pages/admin/DashboardEquiposPage";
 
 function App() {
   return (
@@ -43,9 +43,15 @@ function App() {
             <Route path="/" element={<PublicRoutes />}>
               <Route path={HOME_PATH} element={<HomePage />} />
               <Route path={PLAY2_PATH} element={<Play2Page />} />
-              <Route path={PLAY2_AVANZADO_PATH} element={<Play2AdvancePage/>} />
+              <Route
+                path={PLAY2_AVANZADO_PATH}
+                element={<Play2AdvancePage />}
+              />
               <Route path={PLAY2_SUPERIOR_PATH} element={<Play2SuperPage />} />
-              <Route path={PLAY3_AVANZADO_PATH} element={<Play3AdvancePage />} />
+              <Route
+                path={PLAY3_AVANZADO_PATH}
+                element={<Play3AdvancePage />}
+              />
               <Route path={PLAY3_SUPERIOR_PATH} element={<Play3SuperPage />} />
               <Route path={LOGIN_PATH} element={<LoginPage />} />
               <Route path={FULL_CLARO_PATH} element={<FullClaroPage />} />
@@ -68,6 +74,7 @@ function App() {
           <Route path="/admin" element={<PrivateRoutes />}>
             <Route index element={<DashboardPage />}></Route>
             <Route path={WEB_DATA_PATH} element={<DatosClientePage />} />
+            <Route path="equipos" element={<DashboardEquiposPage />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

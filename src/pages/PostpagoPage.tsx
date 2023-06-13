@@ -2,6 +2,11 @@ import { Navbar } from "../components/base/Navbar";
 import { Footer } from "../components/base/Footer";
 import { ContactCard } from "../components/ContactCard";
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
   Badge,
   Box,
   Button,
@@ -10,6 +15,12 @@ import {
   HStack,
   Heading,
   Image,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
   Radio,
   RadioGroup,
   SimpleGrid,
@@ -17,6 +28,7 @@ import {
   Stack,
   Text,
   useColorModeValue,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { AiOutlineFundView } from "react-icons/ai";
 import { Helmet } from "react-helmet";
@@ -27,6 +39,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { PhoneDataProps } from "../types/componente";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
 import { MarcasTelefonoDB } from "../db/db";
+import { MdWhatsapp } from "react-icons/md";
 
 const PhoneCard = (props: PhoneDataProps) => {
   return (
@@ -64,6 +77,7 @@ const PhoneCard = (props: PhoneDataProps) => {
         </Stack>
       </HStack>
       <Button
+        onClick={props.onOpen}
         colorScheme="red"
         mt={3}
         variant="outline"
@@ -75,12 +89,71 @@ const PhoneCard = (props: PhoneDataProps) => {
   );
 };
 
+const ModalPhoneInfo = () => {
+  return (
+    <Box>
+      <Center>
+        <Image
+          w="50%"
+          src="https://claroperupoc.vtexassets.com/arquivos/ids/819550/moto-g23-concreto-2.png"
+        />
+      </Center>
+
+      <HStack
+        fontWeight="semibold"
+        bg="gray.50"
+        justifyContent="space-between"
+        p={2}
+      >
+        <Text>Sistema Operativo</Text>
+        <Text>Android 11</Text>
+      </HStack>
+
+      <HStack fontWeight="semibold" justifyContent="space-between" p={2}>
+        <Text>RAM</Text>
+        <Text>4GB</Text>
+      </HStack>
+
+      <HStack
+        fontWeight="semibold"
+        bg="gray.50"
+        justifyContent="space-between"
+        p={2}
+      >
+        <Text>Camára</Text>
+        <Text>28 Mpx</Text>
+      </HStack>
+
+      <HStack fontWeight="semibold" justifyContent="space-between" p={2}>
+        <Text>Almacenamiento</Text>
+        <Text>256GB</Text>
+      </HStack>
+
+      <HStack
+        fontWeight="semibold"
+        bg="gray.50"
+        justifyContent="space-between"
+        p={2}
+      >
+        <Text>Procesador</Text>
+        <Text>Snapdragon 662 2GHz</Text>
+      </HStack>
+
+      <Center py={4}>
+        <Button leftIcon={<MdWhatsapp />} colorScheme="red" textAlign="center">
+          Mas Informacion
+        </Button>
+      </Center>
+    </Box>
+  );
+};
+
 export const PostpagoPage = () => {
   const [phoneData, setPhoneData] = useState<PhoneDataProps[]>([]);
   const [loading, setLoading] = useState(true);
   const { marca } = useParams();
   const navigate = useNavigate();
-
+  const { isOpen, onClose, onOpen } = useDisclosure();
   const handleMarcaChange = (newMarca: string) => {
     navigate(`/moviles/${newMarca}`);
   };
@@ -119,24 +192,39 @@ export const PostpagoPage = () => {
           borderRadius="2xl"
           bg={useColorModeValue("white", "whiteAlpha.100")}
         >
-          <Stack py={5} px={4} spacing={5}>
-            <Heading size="md">Marcas</Heading>
-            <RadioGroup onChange={handleMarcaChange} defaultValue={marca}>
-              <Stack spacing={5}>
-                {MarcasTelefonoDB.map((value, index) => (
-                  <HStack justifyContent="space-between" key={index}>
-                    <div>{value.name.toLowerCase()}</div>
-                    <Radio
-                      size="lg"
-                      name="1"
-                      colorScheme="blue"
-                      value={value.name.toLowerCase()}
-                    />
-                  </HStack>
-                ))}
-              </Stack>
-            </RadioGroup>
-          </Stack>
+          <Accordion allowToggle>
+            <AccordionItem border={0}>
+              <h2>
+                <AccordionButton>
+                  <Box as="span" flex="1" textAlign="left">
+                    Filtrar
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+
+              <AccordionPanel>
+                <Stack py={5} px={4} spacing={5}>
+                  <Heading size="md">Marcas</Heading>
+                  <RadioGroup onChange={handleMarcaChange} defaultValue={marca}>
+                    <Stack spacing={5}>
+                      {MarcasTelefonoDB.map((value, index) => (
+                        <HStack justifyContent="space-between" key={index}>
+                          <div>{value.name.toLowerCase()}</div>
+                          <Radio
+                            size="lg"
+                            name="1"
+                            colorScheme="blue"
+                            value={value.name.toLowerCase()}
+                          />
+                        </HStack>
+                      ))}
+                    </Stack>
+                  </RadioGroup>
+                </Stack>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
         </Box>
         {loading ? (
           <Center w="full">
@@ -147,12 +235,28 @@ export const PostpagoPage = () => {
             {phoneData &&
               phoneData.map((value, index) => (
                 <LazyLoadComponent key={index}>
-                  <PhoneCard {...value} />
+                  <PhoneCard {...value} onOpen={onOpen} />
                 </LazyLoadComponent>
               ))}
           </SimpleGrid>
         )}
       </Flex>
+
+      <Modal
+        isCentered
+        onClose={onClose}
+        isOpen={isOpen}
+        motionPreset="slideInBottom"
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Samsung Galaxy AS 20</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <ModalPhoneInfo />
+          </ModalBody>
+        </ModalContent>
+      </Modal>
 
       <Footer />
     </main>
