@@ -14,11 +14,12 @@ import { MdOutlineSpeed, MdWhatsapp } from "react-icons/md";
 import { PlanesBaseType } from "../types/db";
 
 export const CardPlanesPlay = ({
+  nombre_plan,
   mb_standar,
   mb_fullclaro,
   precio_promo,
   precio_real,
-  duracion_promo
+  duracion_promo,
 }: PlanesBaseType) => {
   return (
     <Center py={6}>
@@ -40,22 +41,27 @@ export const CardPlanesPlay = ({
             <MdOutlineSpeed size={90} />
             {mb_standar} Mbps
           </Text>
-          
-       
-              <Stack direction={"row"} align={"center"} justify={"center"}>
-              <Text fontSize={"3xl"}>S./</Text>
-              <Text fontSize={"4xl"} fontWeight={800}>
-                {precio_promo.toFixed(2)}
-              </Text>
-              <Text color={"gray.500"}>x {duracion_promo == 1 ? <text>1 mes</text>:<text>3 meses</text>}</Text>
-            </Stack>
 
+          <Stack direction={"row"} align={"center"} justify={"center"}>
+            <Text fontSize={"3xl"}>S./</Text>
+            <Text fontSize={"4xl"} fontWeight={800}>
+              {precio_promo.toFixed(2)}
+            </Text>
+            <Text color={"gray.500"}>
+              x{" "}
+              {duracion_promo == 1 ? <text>1 mes</text> : <text>3 meses</text>}
+            </Text>
+          </Stack>
 
-
-
-          { precio_real != 0  && precio_promo !=0 ? <Text color={useColorModeValue('gray.500', 'gray.400')} fontSize='x'><b>El precio real es S/. {precio_real} por mes</b></Text>: null }
+          {precio_real != 0 && precio_promo != 0 ? (
+            <Text
+              color={useColorModeValue("gray.500", "gray.400")}
+              fontSize="x"
+            >
+              <b>El precio real es S/. {precio_real} por mes</b>
+            </Text>
+          ) : null}
           <Text color="gray.500">Tu contrato renueva cada mes</Text>
-
         </Stack>
 
         <Box bg={useColorModeValue("white", "gray.800")} px={6} py={5}>
@@ -73,16 +79,12 @@ export const CardPlanesPlay = ({
               <ListIcon as={CheckIcon} color="green.400" />
               Series y peliculas en HD
             </ListItem>
-            {
-              mb_fullclaro != 0 ? (
-                <ListItem>
+            {mb_fullclaro != 0 ? (
+              <ListItem>
                 <ListIcon as={CheckIcon} color="green.400" />
-                
                 <b>{mb_fullclaro}Mbps</b> Full Claro
               </ListItem>
-              ): null
-
-            }
+            ) : null}
 
             <ListItem>
               <ListIcon as={CheckIcon} color="green.400" />
@@ -90,22 +92,27 @@ export const CardPlanesPlay = ({
             </ListItem>
           </List>
 
-          <Button
-            leftIcon={<MdWhatsapp size={25} />}
-            mt={10}
-            w={"full"}
-            bg={"green.400"}
-            color={"white"}
-            rounded={"xl"}
-            _hover={{
-              bg: "green.500",
-            }}
-            _focus={{
-              bg: "green.500",
-            }}
+          <a
+            href={`https://api.whatsapp.com/send/?phone=51902430825&text=${"😃¡Hola Fernanda! estoy interesado en *PLAN"}: ${nombre_plan}* 📲 Por favor mas información. Gracias.`}
+            target="_blank"
           >
-            Mas Información
-          </Button>
+            <Button
+              leftIcon={<MdWhatsapp size={25} />}
+              mt={10}
+              w={"full"}
+              bg={"green.400"}
+              color={"white"}
+              rounded={"xl"}
+              _hover={{
+                bg: "green.500",
+              }}
+              _focus={{
+                bg: "green.500",
+              }}
+            >
+              Mas Información
+            </Button>
+          </a>
         </Box>
       </Box>
     </Center>

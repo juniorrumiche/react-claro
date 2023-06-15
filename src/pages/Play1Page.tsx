@@ -19,7 +19,7 @@ export const Play1Page = () => {
       <Container maxWidth="6xl" py={10}>
         <Box py={5}>
           <VStack>
-            <MdWifi size={90} />
+            <MdWifi size={80} />
             <Heading textAlign="center">
               Elige el paquete de Internet ideal para tu hogar
             </Heading>

@@ -445,7 +445,8 @@ export const MarcasTelefonoDB: Array<MarcasTelefonoType> = [
   },
   {
     name: "ETC",
-    image_url: "https://images.samsung.com/is/image/samsung/p6pim/ie/2302/gallery/ie-galaxy-s23-s916-sm-s916bligeub-thumb-535049031?$GNB_CARD_FULL_M_PNG_PNG$",
+    image_url:
+      "https://images.samsung.com/is/image/samsung/p6pim/ie/2302/gallery/ie-galaxy-s23-s916-sm-s916bligeub-thumb-535049031?$GNB_CARD_FULL_M_PNG_PNG$",
   },
 
   {

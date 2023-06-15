@@ -37,7 +37,7 @@ export const ListaDePlanes = () => {
       <Container
         px={5}
         my={10}
-        minWidth={{ base: "1xl", md: "7xl", lg: "6xl" }}
+        minWidth={{ base: "1xl", md: "7xl", lg: "7xl" }}
       >
         <Center>
           <Heading size="lg">Tenemos el plan perfecto para ti</Heading>

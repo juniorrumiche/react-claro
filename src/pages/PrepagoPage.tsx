@@ -10,44 +10,36 @@ import { CarouselBannerImageProps } from "../types/componente";
 const sliderImages: Array<CarouselBannerImageProps> = [
 
   {
+    
     base: "",
-    md: "/images/slider-postpago-1.jpg",
+    md: "/images/slider-prepago-1.jpg",
   },
   {
     base: "",
-    md: "/images/slider-postpago-2.jpg",
-  },
-  
-  {
-    base: "",
-    md: "/images/slider-postpago-3.jpg",
+    md: "/images/slider-prepago-2.jpg",
   },
   
   {
     base: "",
-    md: "/images/slider-postpago-4.jpg",
+    md: "/images/slider-prepago-3.jpg",
   },
   
   {
     base: "",
-    md: "/images/slider-postpago-5.jpg",
+    md: "/images/slider-prepago-4.jpg",
   },
   
   {
     base: "",
-    md: "/images/slider-postpago-6.jpg",
+    md: "/images/slider-prepago-5.jpg",
   },
-  {
-    base: "",
-    md: "/images/slider-postpago-7.jpg",
-  }
 ];
 
-export const PostpagoPage = () => {
+export const PrepagoPage = () => {
   return (
     <>
       <Helmet>
-        <title> Postpago | Tienda Claro</title>
+        <title> Prepago | Tienda Claro</title>
       </Helmet>
       <Navbar />
       <CarouselBanner image={sliderImages} />

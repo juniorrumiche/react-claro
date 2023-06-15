@@ -71,7 +71,7 @@ export const CardPlanNetflix = ({
           </List>
 
          <a
-        href={`https://api.whatsapp.com/send/?phone=51902430825&text=${"😃¡Hola Fernanda! estoy interesado en *PLAN"}}: ${nombre_plan}* 📲 Por favor mas información. Gracias.`} target="_blank">
+        href={`https://api.whatsapp.com/send/?phone=51902430825&text=${"😃¡Hola Fernanda! estoy interesado en *PLAN"}: ${nombre_plan}* 📲 Por favor mas información. Gracias.`} target="_blank">
          <Button
             leftIcon={<MdWhatsapp size={25} />}
             mt={10}

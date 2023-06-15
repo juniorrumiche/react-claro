@@ -13,7 +13,40 @@ import {
 import { Navbar } from "../components/base/Navbar";
 import { Footer } from "../components/base/Footer";
 
-const CardPromociones = () => {
+const bancos = [
+  {
+    name: " Aprovecha los dtos. en equipos + accesorios ",
+    image: "/images/convenios/convenio-ibk.jpg",
+  },
+
+  {
+    name: " Aprovecha los dtos. en equipos + accesorios ",
+    image: "/images/convenios/convenio-bbva.jpg",
+  },
+  
+  {
+    name: " Aprovecha los dtos. en equipos + accesorios ",
+    image: "/images/convenios/convenio-bcp.jpg",
+  },
+  
+  {
+    name: " Aprovecha los dtos. en equipos + accesorios ",
+    image: "/images/convenios/convenio-diners.jpg",
+  },
+  
+  {
+    name: " Aprovecha los dtos. en equipos + accesorios ",
+    image: "/images/convenios/convenio-oh.jpg",
+  },
+];
+
+
+interface CardPromocionesProps {
+  name: string,
+  image: string
+    
+  }
+const CardPromociones = ({name, image} : CardPromocionesProps) => {
   return (
     <Box
       color="white.200"
@@ -32,7 +65,7 @@ const CardPromociones = () => {
         </VStack>
 
         <VStack h="full" w="full">
-          <Image src="https://claroperupoc.vtexassets.com/assets/vtex.file-manager-graphql/images/651dff28-1169-4d33-9476-c9a7c6502bd6___246a9cc3b6d98f4dbc9cba68cb59cd2b.png" />
+          <Image src={image}/>
         </VStack>
       </HStack>
     </Box>
@@ -54,9 +87,10 @@ export const PromocionesClaroPage = () => {
             cientos de accesorios, disfruta de excelentes planes y descuentos
             que tenemos para ti ahora.
           </Text>
-          <SimpleGrid columns={2} py={10} spacing={10}>
-            <CardPromociones />
-            <CardPromociones />
+          <SimpleGrid columns={{ base: 1, md: 2 }} py={10} spacing={10}>
+          {bancos.map((value, index) => (
+            <CardPromociones {...value} key={index} />
+          ))}
           </SimpleGrid>
         </Box>
       </Container>

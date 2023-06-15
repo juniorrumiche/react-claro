@@ -37,6 +37,7 @@ import {
   PLAY3_AVANZADO_PATH,
   PLAY3_SUPERIOR_PATH,
   POSTPAGO_CLARO_PATH,
+  PREPAGO_CLARO_PATH,
   PROMOCIONES_PATH,
 } from "../../config/config";
 
@@ -342,7 +343,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: "Prepago",
         subLabel: "Flexibilidad y ahorro garantizados aquí",
-        href: "#",
+        href: PREPAGO_CLARO_PATH,
       },
     ],
   },
@@ -362,6 +363,12 @@ const NAV_ITEMS: Array<NavItem> = [
 
       {
         label: "Promociones Claro",
+        subLabel: "Con nuestras promociones, más por menos",
+        href: PROMOCIONES_PATH,
+      },
+      
+      {
+        label: "Promociones (Tajeta de credito)",
         subLabel: "Con nuestras promociones, más por menos",
         href: PROMOCIONES_PATH,
       },

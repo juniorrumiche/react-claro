@@ -28,3 +28,12 @@ export interface PhoneDataProps {
   modalidad?: string;
   pOnline: string;
 }
+
+export interface CarouselBannerImageProps {
+  base: string;
+  md: string;
+}
+
+export interface CarouselBannerProps {
+  image: Array<CarouselBannerImageProps>;
+}

@@ -52,9 +52,11 @@ const MarcaSliderItem = ({ name, image_url }: MarcaSliderItemType) => {
 };
 
 export const MarcaSlider = () => {
+  const MarcasTelefonoDBAleatorio = [...MarcasTelefonoDB];
+  MarcasTelefonoDBAleatorio.sort(() => Math.random() - 0.5);
   return (
     <SimpleGrid columns={{ base: 1, md: 3, lg: 5 }} px={5} py={10}>
-      {MarcasTelefonoDB.map((value, index) => (
+      {MarcasTelefonoDBAleatorio.map((value, index) => (
         <MarcaSliderItem key={index} {...value} />
       ))}
     </SimpleGrid>

@@ -14,6 +14,7 @@ export const HOME_PATH = "/";
 export const FULL_CLARO_PATH = "/full-claro";
 export const PLANES_NETFLIX_PATH = "/planes/netflix";
 export const POSTPAGO_CLARO_PATH = "/planes/postpago";
+export const PREPAGO_CLARO_PATH = "/planes/prepago";
 export const PROMOCIONES_PATH = "/promociones";
 export const MOVILES_LISTA_PATH = "/moviles";
 export const PLAY1_PATH = "/planes/1play";

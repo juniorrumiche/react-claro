@@ -6,7 +6,6 @@ import {
   FULL_CLARO_PATH,
   HOME_PATH,
   LOGIN_PATH,
-  MOVILES_LISTA_PATH,
   PLANES_NETFLIX_PATH,
   PLAY1_PATH,
   PLAY2_AVANZADO_PATH,
@@ -14,6 +13,8 @@ import {
   PLAY2_SUPERIOR_PATH,
   PLAY3_AVANZADO_PATH,
   PLAY3_SUPERIOR_PATH,
+  POSTPAGO_CLARO_PATH,
+  PREPAGO_CLARO_PATH,
   PROMOCIONES_PATH,
   WEB_DATA_PATH,
 } from "./config/config";
@@ -33,6 +34,7 @@ import { Play2SuperPage } from "./pages/Play2SuperPage";
 import { Play3AdvancePage } from "./pages/Play3Advance";
 import { Play3SuperPage } from "./pages/Play3SuperPage";
 import { DashboardEquiposPage } from "./pages/admin/DashboardEquiposPage";
+import { PrepagoPage } from "./pages/PrepagoPage";
 
 function App() {
   return (
@@ -56,8 +58,13 @@ function App() {
               <Route path={LOGIN_PATH} element={<LoginPage />} />
               <Route path={FULL_CLARO_PATH} element={<FullClaroPage />} />
               <Route path={PLAY1_PATH} element={<Play1Page />} />
+              
               <Route
-                path={MOVILES_LISTA_PATH + "/:marca"}
+                path={PREPAGO_CLARO_PATH}
+                element={<PrepagoPage />}
+              />
+              <Route
+                path={POSTPAGO_CLARO_PATH}
                 element={<PostpagoPage />}
               />
               <Route

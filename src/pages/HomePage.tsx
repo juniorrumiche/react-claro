@@ -30,6 +30,7 @@ export const HomePage = () => {
         <Image alt="claro promociones" src="/banner-home.png" />
       </Box>
       <ListaDePlanes />
+      
       <Box py={10}>
         <Center>
           <Heading textAlign="center" size="lg">
