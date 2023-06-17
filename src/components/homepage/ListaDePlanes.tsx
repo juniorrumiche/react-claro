@@ -17,19 +17,38 @@ const ListaPlanItem = (props: ListDePlanesItemType) => {
         justifyContent="center"
         alignItems="center"
         w="full"
-        py={14}
         my={5}
         borderRadius="3xl"
         bg={useColorModeValue("white", "whiteAlpha.200")}
       >
-        <Image src="https://claroperupoc.vtexassets.com/arquivos/claro-img-renueva-tu-equipo_actualizado.png" />
+        <Image borderRadius="2xl" src={props.image} />
       </HStack>
       <Heading textAlign="center" fontWeight="semibold" size="md">
-        {props.title}
+        {props.name}
       </Heading>
     </Flex>
   );
 };
+
+const planes = [
+  {
+    name: "Hogar 1 play",
+    image: "/images/home-1play.jpg",
+  },
+  {
+    name: "Hogar 2 play",
+    image: "/images/home-2play.jpg",
+  },
+
+  {
+    name: "Hogar 3 play",
+    image: "/images/home-3play.jpg",
+  },
+  {
+    name: "Planes Netflix",
+    image: "/images/home-netflix.jpg",
+  },
+];
 
 export const ListaDePlanes = () => {
   return (
@@ -42,12 +61,10 @@ export const ListaDePlanes = () => {
         <Center>
           <Heading size="lg">Tenemos el plan perfecto para ti</Heading>
         </Center>
-        <SimpleGrid columns={{ base: 1, md: 5 }} gap={10}>
-          <ListaPlanItem title="Hogar 1 play" />
-          <ListaPlanItem title="Hogar 2 play" />
-          <ListaPlanItem title="Hogar 3 play" />
-          <ListaPlanItem title="Planes Netflix" />
-          <ListaPlanItem title="Planes Moviles" />
+        <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} gap={10}>
+          {planes.map((value, index) => (
+            <ListaPlanItem key={index} {...value} />
+          ))}
         </SimpleGrid>
       </Container>
     </>

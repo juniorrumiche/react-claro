@@ -121,11 +121,11 @@ export const PlanesNetflixPage = () => {
         </Flex>
       </Container>
       <Container maxWidth="6xl" pb={10}>
-        <Slider dots={true} arrows={false} {...settings}>
+        <SimpleGrid columns={{base: 1, md: 2, lg: 3}}>
           {PlanesNetflixDB.map((plan, index) => (
             <CardPlanNetflix key={index} {...plan} />
           ))}
-        </Slider>
+        </SimpleGrid>
       </Container>
       <PlanNetFlixBeneficios />
 

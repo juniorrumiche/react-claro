@@ -33,6 +33,10 @@ const sliderImages: Array<CarouselBannerImageProps> = [
     base: "",
     md: "/images/slider-prepago-5.jpg",
   },
+  {
+    base: "",
+    md: "/images/slider-prepago-6.jpg",
+  }
 ];
 
 export const PrepagoPage = () => {

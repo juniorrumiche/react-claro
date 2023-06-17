@@ -9,7 +9,7 @@ export interface MarcaSliderItemType {
 }
 
 export interface ListDePlanesItemType {
-  title?: string;
+  name?: string;
   image?: string;
 }
 
