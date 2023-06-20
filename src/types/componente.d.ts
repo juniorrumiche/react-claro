@@ -37,3 +37,12 @@ export interface CarouselBannerImageProps {
 export interface CarouselBannerProps {
   image: Array<CarouselBannerImageProps>;
 }
+
+export interface CardImageFullClaroProps {
+  image: string;
+}
+
+
+export interface CardPhoneFullClaroProps {
+  image: string
+}

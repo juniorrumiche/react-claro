@@ -16,6 +16,7 @@ import {
   POSTPAGO_CLARO_PATH,
   PREPAGO_CLARO_PATH,
   PROMOCIONES_PATH,
+  PROMOCIONES_TARJETA_PATH,
   WEB_DATA_PATH,
 } from "./config/config";
 import { PublicRoutes } from "./components/PublicRoutes";
@@ -35,6 +36,7 @@ import { Play3AdvancePage } from "./pages/Play3Advance";
 import { Play3SuperPage } from "./pages/Play3SuperPage";
 import { DashboardEquiposPage } from "./pages/admin/DashboardEquiposPage";
 import { PrepagoPage } from "./pages/PrepagoPage";
+import { PromocionesTarjetaClaroPage } from "./pages/PromocionesTarjetaClaroPage";
 
 function App() {
   return (
@@ -58,18 +60,17 @@ function App() {
               <Route path={LOGIN_PATH} element={<LoginPage />} />
               <Route path={FULL_CLARO_PATH} element={<FullClaroPage />} />
               <Route path={PLAY1_PATH} element={<Play1Page />} />
-              
-              <Route
-                path={PREPAGO_CLARO_PATH}
-                element={<PrepagoPage />}
-              />
-              <Route
-                path={POSTPAGO_CLARO_PATH}
-                element={<PostpagoPage />}
-              />
+
+              <Route path={PREPAGO_CLARO_PATH} element={<PrepagoPage />} />
+              <Route path={POSTPAGO_CLARO_PATH} element={<PostpagoPage />} />
               <Route
                 path={PROMOCIONES_PATH}
                 element={<PromocionesClaroPage />}
+              />
+
+              <Route
+                path={PROMOCIONES_TARJETA_PATH}
+                element={<PromocionesTarjetaClaroPage />}
               />
               <Route
                 path={PLANES_NETFLIX_PATH}

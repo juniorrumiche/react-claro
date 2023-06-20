@@ -48,6 +48,11 @@ const planes = [
     name: "Planes Netflix",
     image: "/images/home-netflix.jpg",
   },
+  
+  {
+    name: "Planes Moviles",
+    image: "/images/home-planes-moviles.jpg",
+  },
 ];
 
 export const ListaDePlanes = () => {
@@ -61,7 +66,7 @@ export const ListaDePlanes = () => {
         <Center>
           <Heading size="lg">Tenemos el plan perfecto para ti</Heading>
         </Center>
-        <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} gap={10}>
+        <SimpleGrid columns={{ base: 1, md: 3, lg: 5 }} gap={10}>
           {planes.map((value, index) => (
             <ListaPlanItem key={index} {...value} />
           ))}

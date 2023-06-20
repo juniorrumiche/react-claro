@@ -39,6 +39,7 @@ import {
   POSTPAGO_CLARO_PATH,
   PREPAGO_CLARO_PATH,
   PROMOCIONES_PATH,
+  PROMOCIONES_TARJETA_PATH,
 } from "../../config/config";
 
 export const Navbar = () => {
@@ -370,7 +371,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: "Promociones (Tajeta de credito)",
         subLabel: "Con nuestras promociones, más por menos",
-        href: PROMOCIONES_PATH,
+        href: PROMOCIONES_TARJETA_PATH,
       },
     ],
   },

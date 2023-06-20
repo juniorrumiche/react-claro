@@ -16,6 +16,7 @@ export const PLANES_NETFLIX_PATH = "/planes/netflix";
 export const POSTPAGO_CLARO_PATH = "/planes/postpago";
 export const PREPAGO_CLARO_PATH = "/planes/prepago";
 export const PROMOCIONES_PATH = "/promociones";
+export const PROMOCIONES_TARJETA_PATH = "/promociones/tarjeta";
 export const MOVILES_LISTA_PATH = "/moviles";
 export const PLAY1_PATH = "/planes/1play";
 export const PLAY2_PATH = "/planes/2play";

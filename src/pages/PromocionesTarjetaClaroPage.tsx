@@ -13,23 +13,40 @@ import {
 import { Navbar } from "../components/base/Navbar";
 import { Footer } from "../components/base/Footer";
 
-const promociones = [
+const bancos = [
   {
     name: " Aprovecha los dtos. en equipos + accesorios ",
-    image: "/images/promo/promo-tarjeta-50.jpg",
+    image: "/images/convenios/convenio-ibk.jpg",
   },
 
   {
     name: " Aprovecha los dtos. en equipos + accesorios ",
-    image: "/images/promo/promo-tarjeta-20.jpg",
+    image: "/images/convenios/convenio-bbva.jpg",
+  },
+  
+  {
+    name: " Aprovecha los dtos. en equipos + accesorios ",
+    image: "/images/convenios/convenio-bcp.jpg",
+  },
+  
+  {
+    name: " Aprovecha los dtos. en equipos + accesorios ",
+    image: "/images/convenios/convenio-diners.jpg",
+  },
+  
+  {
+    name: " Aprovecha los dtos. en equipos + accesorios ",
+    image: "/images/convenios/convenio-oh.jpg",
   },
 ];
 
+
 interface CardPromocionesProps {
-  name: string;
-  image: string;
-}
-const CardPromociones = ({ name, image }: CardPromocionesProps) => {
+  name: string,
+  image: string
+    
+  }
+const CardPromociones = ({name, image} : CardPromocionesProps) => {
   return (
     <Box
       color="white.200"
@@ -48,14 +65,14 @@ const CardPromociones = ({ name, image }: CardPromocionesProps) => {
         </VStack>
 
         <VStack h="full" w="full">
-          <Image src={image} />
+          <Image src={image}/>
         </VStack>
       </HStack>
     </Box>
   );
 };
 
-export const PromocionesClaroPage = () => {
+export const PromocionesTarjetaClaroPage = () => {
   return (
     <>
       <Navbar />
@@ -71,9 +88,9 @@ export const PromocionesClaroPage = () => {
             que tenemos para ti ahora.
           </Text>
           <SimpleGrid columns={{ base: 1, md: 2 }} py={10} spacing={10}>
-            {promociones.map((value, index) => (
-              <CardPromociones {...value} key={index} />
-            ))}
+          {bancos.map((value, index) => (
+            <CardPromociones {...value} key={index} />
+          ))}
           </SimpleGrid>
         </Box>
       </Container>

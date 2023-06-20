@@ -14,23 +14,7 @@ import { Navbar } from "../components/base/Navbar";
 import { CardPlanNetflix } from "../components/planesnetflix/CardPlanNetflix";
 import { Planes1PlayDB, PlanesNetflixDB } from "../db/db";
 import { Footer } from "../components/base/Footer";
-import Slider from "react-slick";
 import { Helmet } from "react-helmet";
-
-const settings = {
-  swipe: true,
-  slidesToShow: 3,
-  autoplay: true,
-  infinite: true,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-      },
-    },
-  ],
-};
 
 const PlanNetFlixBeneficios = () => {
   return (
@@ -121,7 +105,7 @@ export const PlanesNetflixPage = () => {
         </Flex>
       </Container>
       <Container maxWidth="6xl" pb={10}>
-        <SimpleGrid columns={{base: 1, md: 2, lg: 3}}>
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }}>
           {PlanesNetflixDB.map((plan, index) => (
             <CardPlanNetflix key={index} {...plan} />
           ))}
